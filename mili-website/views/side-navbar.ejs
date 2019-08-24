@@ -1,0 +1,126 @@
+<!-- Navigation changes -->
+<style>
+   .is-sidebar-translated {
+      left: 0px;
+   }
+
+   nav.dashboard-nav {
+      margin-left: 0px;
+   }
+
+   .dashboard-wrapper {
+      margin-left: -4%;
+   }
+
+   .hide-txt {
+      display: none;
+   }
+</style>
+<script>
+   $(document).ready(function () {
+
+      $('.rotate').on('click', function () {
+         var flag = $(this).data('flag');
+         console.log(flag);
+         if (flag) {
+            $('.dashboard-wrapper').css("margin-left", "-3%");
+            $(".dashboard-wrapper").css("width", "100%");
+            $("nav.dashboard-nav").css("max-width", "100%");
+            $("img.nav-icon-list").css("margin-left", "88%");
+            // $("img.nav-icon-list").css('margin-right','12px','important');
+            $(".hide-txt").css("display", "none");
+            $(".show_all").css("margin", "20px 0px 0px 6%");
+            $(".breadcrumbs").css("right", "6%");
+            $(".breadcrumbs").css("top","80px");
+         } else {
+            $(".dashboard-wrapper").css("margin-left", "-160px");
+            $(".dashboard-wrapper").css("width", "93%");
+            $("nav.dashboard-nav").css("max-width", "calc(100% - 240px)");
+            $("img.nav-icon-list").css("margin-left", "0%");
+            $("img.nav-icon-list").css("margin-right", "0%");
+            $(".hide-txt").css("display", "block");
+            $(".show_all").css("margin", "20px 0px 0px -3%");
+            $(".breadcrumbs").css("right", "23%");
+            $(".breadcrumbs").css("top","50px");
+         }
+
+         $(this).data('flag', !flag);
+      });
+
+      // $(".rotate").click(function(){
+      //    var $this = $(this);
+      //    if($this.data('clicked')) {
+      //       $(".dashboard-wrapper").css("margin-left","-3%");
+      //    }
+      //    else {
+      //       $this.data('clicked', true);
+      //       $(".dashboard-wrapper").css("margin-left","-160px");
+      //    }
+      // });
+   });
+</script>
+<style>
+   nav.dashboard-nav {
+      max-width: 100%;
+   }
+
+   img.nav-icon-list::after {
+      position: absolute;
+      top: 21px;
+      right: 30px;
+      content: "\E409";
+      color: #fff;
+      transition: all .5s;
+   }
+</style>
+<!-- Child push sidebar menu -->
+<nav class="child-menu is-hidden-mobile">
+   <div class="child-menu-inner">
+      <!-- Child menu header -->
+      <ul>
+         <li class="child-header">
+            <div class="sidebar-title">Ywait</div>
+            <a id="close-child-menu" href="#" class="menu-wrapper">
+               <span class="icon-box-toggle ef-4">
+                  <span class="rotate">
+                     <i class="icon-line-top"> </i>
+                     <i class="icon-line-center"> </i>
+                     <i class="icon-line-bottom"> </i>
+                  </span>
+               </span>
+            </a>
+         </li>
+      </ul>
+      <!-- /Child menu header -->
+      <ul id="dashboard-menu" class="sidebar-menu is-active animated preFadeInRIght fadeInRight">
+         <li class="have-children">
+            <a href="/dashboard"><img src="assets/images/custom icon/dashboard-white.png" class="nav-icon-list">
+               <div class="hide-txt">Dashboard</div>
+            </a>
+         </li>
+         <li class="have-children">
+            <a href="/kitchen"><img src="assets/images/custom icon/kitchen-white.png" class="nav-icon-list">
+               <div class="hide-txt">Kitchen</div>
+            </a>
+         </li>
+         <li class="have-children">
+            <a href="/menu"><img src="assets/images/custom icon/rest-menu-white.png" class="nav-icon-list">
+               <div class="hide-txt">Menu</div>
+            </a>
+         </li>
+         <li class="have-children">
+               <a href="/placeOrder"><img src="assets/images/custom icon/order.png" class="nav-icon-list">
+                  <div class="hide-txt">Place Order</div>
+               </a>
+            </li>
+         <li class="have-children">
+            <a href="/staff"><img src="assets/images/custom icon/staff-white.png" class="nav-icon-list">
+               <div class="hide-txt">Staff</div>
+            </a>
+         </li>
+         <li class="have-children">
+            <a href="javascript:void(0);" class="profile-trigger"><img src="assets/images/custom icon/staff-white.png" class="nav-icon-list">
+               <div class="hide-txt">Account</div>
+            </a>
+         </li>
+      </ul>

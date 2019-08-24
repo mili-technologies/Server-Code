@@ -1,0 +1,225 @@
+<Style>
+   button.btn.btn-success.modal-trigger {
+       display: none;
+   }
+   .restaurant-name {
+     margin: 1% 0% 0% 11%;
+     font-size: 24px;
+     color: #04b261;
+  }
+   </Style>
+      <!-- Top Navbar -->
+      <nav class="nav dashboard-nav has-shadow">
+           <div class="restaurant-name user_company_name"></div>
+       <div class="container is-fluid">
+          <!-- Nav left -->
+          <div class="nav-left">
+              
+             <div class="nav-item nav-icon logout-button is-hidden-tablet">
+                Menu
+             </div>
+             <!-- /Logout button -->
+             <!-- Reader mode switch -->
+             <div class="nav-item reader-switch is-hidden-desktop is-hidden-tablet">
+                <div class="field">
+                    <!-- Responsive toggle -->
+                    <span class="nav-toggle">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </span>
+                  <div class="nav-right nav-menu">
+                   <a href="dashboard" class="nav-item is-tab nav-inner is-menu-mobile">
+                      Dashboard
+                  </a>
+                  <a href="kitchen" class="nav-item is-tab nav-inner is-menu-mobile">
+                      Kitchen
+                  </a>
+                  <a href="menu" class="nav-item is-tab nav-inner is-menu-mobile">
+                     Menu
+                  </a>
+                  <a href="staff" class="nav-item is-tab nav-inner is-menu-mobile">
+                     Staff
+                  </a>
+                  </div>
+                </div>
+             </div>
+             <!-- Reader mode switch -->
+             <!-- Quick search (hidden on mobile) -->
+             <div class="nav-item">
+                <!-- <div class="field is-hidden-mobile">
+                   <div class="searchbox control has-icons-left">
+                      <input class="input is-secondary-focus" type="text" placeholder="Quick search">
+                      <span class="icon is-left">
+                         <i class="sl sl-icon-magnifier"></i>
+                      </span>
+                   </div>
+                </div> -->
+             </div>
+             <div class="nav-item">
+                   <div class="field is-hidden-desktop is-hidden-tablet">
+                      <div class="searchbox control has-icons-left">
+                         <button type="button" class="btn btn-success modal-trigger" data-modal="card-modal">
+                            <img src="assets/images/logos/add.png">
+                         </button>
+                      </div>
+                   </div>
+                </div>
+             <!-- /Quick search -->
+             <!-- Global search (visible on mobile only) -->
+             <div class="nav-item nav-icon search-icon modal-trigger is-hidden-desktop is-hidden-tablet" data-modal="search-modal">
+                <i class="sl sl-icon-magnifier"></i>
+             </div>
+             <!-- /Global search -->
+             <!-- Right sidebar trigger (visible on mobile only)  -->
+             <div class="nav-item nav-icon chat-button is-hidden-mobile is-hidden-desktop is-hidden-tablet">
+                <!-- <i class="im im-icon-Speach-Bubble11"></i> -->
+                <a href='logout' id="signup-btn">
+                   <img src='/assets/images/icon/logout.png' style="max-height: 28px!important;">
+                </a>
+             </div>
+             <!-- /Right sidebar trigger -->
+          </div>
+          <!-- /Nav left -->
+          <!-- Nav right -->
+          <div class="nav-right nav-menu">
+             <!-- Add New Food Button -->
+             <div class="nav-item drop-pop is-centered nav-icon addnew">
+                   <button type="button" class="btn btn-success modal-trigger addNewFood" data-modal="card-modal"><img src="assets/images/logos/add.png"><div style="margin-right: 15px;">Add New Food</div></button>
+             </div>
+             
+             <!-- Notifications dropdown (hidden on mobile) -->
+             <div class="nav-item drop-pop is-centered nav-icon">
+                <a href="#" class="nav-item nav-icon nav-inner is-active">
+                   <i class="sl sl-icon-bell"><span class="new-circle gelatine"></span></i>
+                </a>
+                <div class="drop-wrapper notifications-drop">
+                   <div class="drop-inner has-arrow">
+                      <div class="notifications-header has-text-centered">
+                         <h3>Notifications</h3>
+                      </div>
+                      <div class="notifications-body">
+                         <ul class="notifications-list">
+                            <li>
+                               <i class="sl sl-icon-heart"></i>
+                               <div class="notification-content">
+                                  <img src="https://place-hold.it/250x250" alt="">
+                                  <div class="notification-text">
+                                     <div class="text">
+                                        <b>Henry</b> liked your <b>comment</b>.
+                                     </div>
+                                     <div class="timestamp">
+                                        23 minutes ago
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                            <li>
+                               <i class="sl sl-icon-check"></i>
+                               <div class="notification-content">
+                                  <img src="https://place-hold.it/250x250" alt="">
+                                  <div class="notification-text">
+                                     <div class="text">
+                                        <b>Marjory</b> followed you.
+                                     </div>
+                                     <div class="timestamp">
+                                        1 hour ago
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                            <li>
+                               <i class="sl sl-icon-heart"></i>
+                               <div class="notification-content">
+                                  <img src="https://place-hold.it/250x250" alt="">
+                                  <div class="notification-text">
+                                     <div class="text">
+                                        <b>Marc</b> commented one of your tasks.
+                                     </div>
+                                     <div class="timestamp">
+                                        Yesterday
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!-- /Notifications dropdown -->
+             <!-- Messages dropdown (hidden on mobile) -->
+             <!-- <div class="nav-item drop-pop is-centered nav-icon">
+                <a href="#" class="nav-item nav-icon nav-inner is-active">
+                   <i class="sl sl-icon-envelope-open"><span class="new-circle gelatine"></span></i>
+                </a>
+                <div class="drop-wrapper emails-drop">
+                   <div class="drop-inner has-arrow">
+                      <div class="emails-header has-text-centered">
+                         <h3>Messages</h3>
+                      </div>
+                      <div class="emails-body">
+                         <ul class="emails-list">
+                            <li>
+                               <img src="https://place-hold.it/250x250" alt="">
+                               <div class="email-content">
+                                  <div class="email-text">
+                                     <div class="text">
+                                        Hello, after our last meetings, it seems that some goals were...
+                                     </div>
+                                     <div class="timestamp">
+                                        Nov 09, 14:18
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                            <li>
+                               <span class="fake-avatar is-secondary">SB</span>
+                               <div class="email-content">
+                                  <div class="email-text">
+                                     <div class="text is-read">
+                                        We did not receive the order yet, can you please check if it has...
+                                     </div>
+                                     <div class="timestamp">
+                                        Nov 05, 13:31
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                            <li>
+                               <span class="fake-avatar is-primary">JK</span>
+                               <div class="email-content">
+                                  <div class="email-text">
+                                     <div class="text is-read">
+                                        My boss was very grateful that you found a solution during the week as...
+                                     </div>
+                                     <div class="timestamp">
+                                        Nov 05, 09:47
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+             </div> -->
+             <!-- Messages dropdown -->
+             <!-- Global search (desktop and tablet only) -->
+             <!-- <div class="nav-item nav-icon search-icon modal-trigger" data-modal="search-modal">
+                <i class="sl sl-icon-magnifier"></i>
+             </div> -->
+             <!-- /Global search -->
+             <!-- Right sidebar trigger (desktop and tablet only) -->
+             <div class="nav-item nav-icon chat-button">
+                <!-- <i class="im im-icon-Speach-Bubble11"></i> -->
+             <a href='logout' id="signup-btn">
+                <img src='/assets/images/icon/logout.png' style="max-height: 28px!important;">
+             </a>
+             </div>
+             <!-- /Right sidebar trigger -->
+          </div>
+          <!-- /Nav right -->
+       </div>
+    </nav>
+    <!-- /Top Navbar -->

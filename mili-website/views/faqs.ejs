@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAQ's</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <!-- Core css -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" id="bulma" href="assets/css/bulma.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/authentication.js"></script>
+    <script src="js/bulkit.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/core_lemonade.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/core_green.css">
+    <!-- Core css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/core_demo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/home_style.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/chosen/chosen.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/highlightjs/style.css">
+    
+    <link rel="stylesheet" type="text/css" href="assets/js/iziToast/iziToast.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+    <!-- Plugins css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/core_flashy.css">
+    <!-- Plugins css -->
+</head>
+<style>
+.nav-item img {
+    max-height: 3rem!important;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+</style>
+<body>
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <% var title = 'Frequently Asked Questions'; %>
+    <% include Ex-header.ejs %>
+
+    <!-- Help category -->
+    <div class="section help-section is-relative">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column"></div>
+                <div class="column is-9 help-container">
+                    <!-- Breadcrumbs -->
+                    <nav class="breadcrumbs">
+                        <ul>
+                            <!-- <li><a href="landing-v3-help.html">All sections</a></li> -->
+                            <li>Welcome to YWait</li>
+                            <li>Frequently Asked Questions</li>
+                            <li>
+                                <!-- <button id="center-toast" class="button btn-align raised">Centered</button> -->
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <!-- /Breadcrumbs -->
+
+                    <!-- Articles list-->
+                    <div class="shadow-bg">
+                        <!-- Header -->
+                        <div class="category-header">
+                            <!-- <div class="icon">
+                                <i class="im im-icon-Claps"></i>
+                            </div> -->
+                            <!-- <div class="inner-content">
+                                <h2 class="title is-3 dark-text">Welcome to our App</h2>
+                                <div class="inner-text">
+                                    Take the first steps before diving deeply into our application. Learn how to setup
+                                    your account and to get started the right way.
+                                </div>
+                                <div class="card-meta">
+                                    <img class="small-avatar" src="https://place-hold.it/250x250" alt="">
+                                    <img class="small-avatar" src="https://place-hold.it/250x250" alt="">
+                                    <div class="meta-info">
+                                        <div class="articles-number">3 articles in this section</div>
+                                        <div class="authors">Written by <span>Nicole Ferrier</span> and 1 other</div>
+                                    </div>
+                                </div>
+                            </div> -->
+							
+							What is Ywait?
+							<br>
+                            Ywait is a product offering by Mili Solutions which helps restaurant to automate their process which includes order placement, kitchen and staff management, handling payments (POS) and many more features which helps restaurants to give their customers a better user experiene
+							using our new and innovative approach and single yet powerful dashboard.
+							<br>
+                            <br>
+							How does customer place an order?
+							<br>
+							Order can be placed by user using our android app by scanning the QR-Code on table inside restaurant which helps customers to go through all offerings do simple search, check by category, 
+							do filter on veg-non veg dishes and add items to cart using simple add to cart mechanism they can check which items are available as of now, know more about them, how much time it would take for the food to be ready all these without need of a waiter and once user is fine they can place the order
+							using any of the UPI apps on their phone (currently we support payment using Google Pay, Paytm and BHIM UPI).
+							<br>
+							<br>
+							What happens after order is placed?
+							<br>
+							Restaurants using their account have access to thier own portal which is categorised into dashboard, kitchen, menu, place order, staff and account once order is placed, staff in kitchen gets notified of new order
+							its quantity, table no and other things associated with order based on which they can take further actions such as mark it confirm and start working on it, reject it due to some reason, once dish is ready user gets notification from kitchen.
+							Meanwhile others can keep track orders from dashboard which givies information about number of orders for the day, order amount, payment status and other things. 
+							<br>
+							<br>
+							What if customers/user doesn't have an app or a phone to place the order?
+							<br>
+							Restaurants using their account have access to thier own portal which gives them option - place order, restaurants using provided option places the order by asking for necessary information such as name, food quantity, table no if required, staff in kitchen gets notified of new order
+							its quantity, table no and other things associated with order based on which they can take further actions such as mark it confirm and start working on it, reject it due to some reason, once dish is ready user gets notification from kitchen.
+							Meanwhile others can keep track orders from dashboard which givies information about number of orders for the day, order amount, payment status and other things. 
+							<br>
+							<br>
+							What happens if customer doesn't have any of the UPI apps or wants to make payment using cash or debit/credit card after order is placed?
+							<br>
+							As mentioned we are adding payment using, debit/credit card
+							customers can make payment using cash for which waiter or captain would update the mode of payment as Cash and payment status as paid for the corresponding order number/token number
+							<br>
+							<br>
+							What are the payment options restaurant customers have now?
+							<br>
+							Customers?Users can make payment using any of the UPI apps on their phone (currently we support payment using Google Pay, Paytm and BHIM UPI) we are adding payment using other UPI apps and Debit and Credit Cards
+							<br>
+							<br>
+							How do any restaurant join us?
+							<br>
+							Signup from our portal and we would reach you in next 3-4 hours post signup and with all required information we get you onboarded with us, we would map QR-Code per table to identify table no for a particular order.
+							<br>
+							<br>
+							What type of restaurants can use our Ywait?
+							<br>
+							Ywait is generic to be used in any restaurant let it a QSR, cafeteria, casual dining, fine dining, food trucks or anything else we have it covered.
+							<br>
+							<br>
+							<br>
+							For more info please drop us an email @- support@ywait.in or call us on +91 8169140042/8886780265 and we would be happy to help you and clear any doubts about our product and the impact it would make in your business 
+                        </div>
+
+                    </div>
+                    <!-- /Articles list-->
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /Help category -->
+
+
+    <!-- Footer -->
+    <% include footer.ejs %>
+    <!-- /Footer -->
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+
+    <!-- Core js -->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <script src="assets/js/core/modernizr.min.js"></script>
+    <!-- Plugins js -->
+    <script src="assets/js/ggpopover/ggtooltip.js"></script>
+    <script src="assets/js/embed/embed.js"></script>
+    
+    <script src="assets/js/iziToast/iziToast.min.js"></script>
+    <!-- Bulkit js -->
+    <script src="assets/js/main.js"></script>
+    <!-- Page specific js -->
+    <script src="assets/js/pages/landingv3.js"></script>
+    
+    <script src="assets/js/pages/components-toasts.js"></script>
+
+</body>
+<style>
+a.nav-item.is-not-mobile{
+    
+}
+</style>
+</html>

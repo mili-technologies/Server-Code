@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>YWait - Menu</title>
+   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+   <!-- Core css -->
+   <script src="assets/js/YWait.js"></script>
+   <link rel="stylesheet" type="text/css" href="assets/css/bulma.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/core_demo.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/custom_dashboard.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/menu_style.css">
+   <!-- Icons -->
+   <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/custom_dashboard.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/custom_menu_mobile.css">
+   <!-- Plugins css -->
+   <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/tagsinput/jquery.tags.input.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/iziToast/iziToast.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick-theme.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/datepicker/datepicker.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/datedropper/datedropper.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/datedropper/datedropper-theme.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/wickedpicker/wickedpicker.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/timedropper/timedropper.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/chosen/chosen.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/jqvmap/jqvmap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+   <link href="//code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+   </link>
+   <script src="//code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+   <!-- Plugins css -->
+   <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/highlightjs/style.css">
+   <!-- Icons -->
+   <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+   <style>
+      .food_resturant_update {
+         margin-right: 5px;
+      }
+
+      button.btn.btn-success.modal-trigger.addNewFood {
+         display: block!important;
+      }
+
+      @media only screen and (max-width: 968px) {
+         .is-hidden-tab {
+            display: none;
+         }
+
+         .nav-left {
+            margin-left: 10%;
+         }
+
+         .nav-item.nav-icon.desktop-logout {
+            margin-right: 3% !important;
+         }
+      }
+   </style>
+   <script src="assets/js/menu.js"></script>
+   <script src="assets/js/menuautocomplete.js"></script>
+</head>
+
+<body>
+   <!-- Pageloader -->
+   <!-- <div class="pageloader"></div>
+   <div class="infraloader is-active"></div> -->
+   <!-- Main sidebar menu -->
+
+   <!-- /Main sidebar menu -->
+   <!-- Child push sidebar menu -->
+
+   <!-- /Child menu header -->
+   <!-- Sidebar menu 1 -->
+   <% include side-navbar.ejs %>
+   <!-- /Sidebar menu 1 -->
+   <!-- Sidebar menu 2 -->
+   <ul id="documents-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">insert_drive_file</span>Documents</a>
+         <ul>
+            <li><a href="javascript:void(0);">Document list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Document details <span
+                     class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+            <li><a href="javascript:void(0);">Invoice <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">assignment</span>Projects</a>
+         <ul>
+            <li><a href="javascript:void(0);">Project list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Project details <span
+                     class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">assignment_turned_in</span>Tasks</a>
+         <ul>
+            <li><a href="javascript:void(0);">Task list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Kanban board</a></li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">library_books</span>Forms</a>
+         <ul>
+            <li><a href="javascript:void(0);">Step form <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Steps <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+   </ul>
+   <!-- /Sidebar menu 2 -->
+   <!-- Sidebar menu 3 -->
+   <ul id="business-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">group</span>Contacts</a>
+         <ul>
+            <li><a href="javascript:void(0);">Contact list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Contact grid <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Contact details <span
+                     class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">person_add</span>Leads</a>
+         <ul>
+            <li><a href="javascript:void(0);">Leads list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Add lead <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">attach_money</span>Deals</a>
+         <ul>
+            <li><a href="javascript:void(0);">Deals list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Single Deal <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <!-- /Sidebar menu 3 -->
+   <!-- Sidebar menu 4 -->
+   <ul id="misc-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">grid_on</span>Datatables</a>
+         <ul>
+            <li><a href="javascript:void(0);">Example 1 <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Example 2 <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Example 3 <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">speaker_notes</span>Faq</a>
+         <ul>
+            <li><a href="javascript:void(0);">Faq home <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+            <li><a href="javascript:void(0);">Faq article <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">thumbs_up_down</span>Forum</a>
+         <ul>
+            <li><a href="javascript:void(0);">Forum home <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Forum thread <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">email</span>Mailbox</a>
+         <ul>
+            <li><a href="javascript:void(0);">Inbox <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+            <li><a href="javascript:void(0);">Compose <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+   </ul>
+   <!-- /Sidebar menu 4 -->
+   <!-- Sidebar menu 5 -->
+   <ul id="settings-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">settings</span>Global settings</a>
+         <ul>
+            <li><a href="javascript:void(0);">Preferences <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Change password <span
+                     class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">account_circle</span>User settings</a>
+         <ul>
+            <li><a href="javascript:void(0);">User list <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+            <li><a href="javascript:void(0);">Add user <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+            <li><a href="javascript:void(0);">Access rights <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+            </li>
+         </ul>
+      </li>
+      <li class="have-children">
+         <a class="parent-link" href="#"><span class="material-icons">domain</span>Organizations</a>
+         <ul>
+            <li><a href="javascript:void(0);">Organizations list <span
+                     class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+            <li><a href="javascript:void(0);">Add organization <span
+                     class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+         </ul>
+      </li>
+   </ul>
+   <!-- /Sidebar menu 5 -->
+   </div>
+   </nav>
+   <!-- /Child push sidebar menu -->
+   <!-- Top Navbar -->
+   <% var title = 'Add New Food'; %>
+   <% include dash-navbar.ejs %>
+   <!-- /Top Navbar -->
+   <!-- Main dashboard container -->
+   <div id="dashboard-wrapper" class="columns">
+      <div class="column divider"></div>
+      <div class="content column is-11">
+         <!-- Breadcrumbs -->
+         <nav class="breadcrumbs">
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li>Menu</li>
+            </ul>
+         </nav>
+
+         <div class="form-group">
+            <!--		Show Numbers Of Rows 		-->
+            <select class="form-control show_all" name="state" id="maxRows">
+               <option value="5000">All Rows</option>
+               <option value="5">5</option>
+               <option value="10">10</option>
+               <option value="15">15</option>
+               <option value="20">20</option>
+               <option value="50">50</option>
+               <option value="70">70</option>
+               <option value="100">100</option>
+            </select>
+
+         </div>
+
+         <!-- /Breadcrumbs -->
+         <style>
+            .update-form-modal {
+               /* padding-right: 3%; */
+               /* padding-top: 0%; */
+               /* margin-top: 5%; */
+               width: 98%;
+               /* border: 1px solid; */
+            }
+
+            .table {
+               width: 100%;
+               max-width: 100%;
+               margin-bottom: 0px;
+            }
+
+            .dashboard-wrapper {
+               padding: 0px 22px 0 16px !important;
+            }
+
+            #reset_token {
+               display: none;
+            }
+         </style>
+         <!-- Update Menu Form -->
+         <div class="update-form-modal">
+            <!-- /Update Menu Form -->
+            <script>
+               $('.hide_update_btn').click(function () {
+                  $('.hide_update_form').hide();
+               });
+            </script>
+         </div>
+         <!-- Dashboard Wrapper -->
+         <div class="dashboard-wrapper">
+            <div class="column">
+               <div class="has-text-centered">
+
+               </div>
+            </div>
+            <style>
+               .confirm-modal {
+                  border: 1px solid;
+                  height: 100px;
+                  text-align: center;
+                  padding: 20px;
+               }
+            </style>
+
+            <div class="confirm-modal" style="display:none;">
+               Confirm Delete?<br>
+               <button class="food_resturant_delete btn btn-danger" id="confirm_remove"
+                  value='" + remove_id + "'>Remove</button>
+               <button class="food_resturant_delete btn btn-danger" id="cancel_remove">Cancel</button>
+            </div>
+            <div class="columns">
+               <div class="column">
+                  <!-- Main content -->
+                  <div id="main-dashboard" class="section-wrapper">
+                     <!-- Stat tiles -->
+                     <!-- User table widget -->
+                     <div class="column is-12">
+                        <div class="flex-card light-bordered light-raised menu-flex">
+                           <h3 class="card-heading has-icon">Menu
+                              <div class="searchbox control has-icons-left">
+                                 <input class="select-table-filter input is-secondary-focus search_menu"
+                                    data-table="menu_table_body" id="search_menu" style='height: 3.5rem;' type="text"
+                                    placeholder="Search food quickly">
+
+                              </div>
+                           </h3>
+                           <table class="table hire-table menu_table_body" id="table-id">
+                              <thead>
+                                 <tr>
+                                    <th style="text-align:center;">Food</th>
+                                    <th style="text-align:center;">Dish</th>
+                                    <th style="text-align:center;">Category</th>
+                                    <th style="text-align:center;">Quantity</th>
+                                    <!-- <th style="text-align:center;">Is Customizable?</th> -->
+                                    <!-- <th style="text-align:center;">Food Ingredents</th> -->
+                                    <th style="text-align:center;">Cost</th>
+                                    <th style="text-align:center;">Available</th>
+                                    <th style="text-align:center;">Recommended</th>
+                                    <!-- <th style="text-align:center;">Food Ready In</th> -->
+                                    <!-- <th style="text-align:center;">Food Likes</th> -->
+                                    <th style="text-align:center;">Action</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <% for(var i=0; i < data[0].result.length; i++) { %>
+                                 <tr class="cloneRow <%= data[0].result[i].restaurant_food_menu_id %>">
+                                    <td style='text-align:center;' class=""><img
+                                          src='<%= data[0].result[i].restaurant_food_img_url %>' alt=''
+                                          class="food_img"></td>
+                                    <td style='text-align:center;' class="food_Name"><%= data[0].result[i].food_name %>
+                                    </td>
+                                    <td style='text-align:center;' class="food_Category">
+                                       <%= data[0].result[i].menu_category %></td>
+                                    <td style='text-align:center;' class="food_Quantity">
+                                       <%= data[0].result[i].food_quantity %></td>
+                                    <td style='text-align:center;' class="food_Price">
+                                       <%= data[0].result[i].food_price %></td>
+                                    <td style='text-align:center;'>
+                                       <select class='food_status food-select order_Status'
+                                          data-value='<%= data[0].result[i].restaurant_food_menu_id %>'
+                                          id='food_status-<%= data[0].result[i].restaurant_food_menu_id %>'>
+                                          <option value='1'>Yes</option>
+                                          <option value='0'>No</option>
+                                       </select>
+                                       <script>
+                                          $('#food_status-<%= data[0].result[i].restaurant_food_menu_id %>').val('<%= data[0].result[i].is_available %>');
+                                       </script>
+                                    </td>
+                                    <td style='text-align:center;'>
+                                       <select class='food_recommended food-select order_Status'
+                                          data-value='<%= data[0].result[i].restaurant_food_menu_id %>'
+                                          id='food_recommended-<%= data[0].result[i].restaurant_food_menu_id %>'>
+                                          <option value='1'>Yes</option>
+                                          <option value='0'>No</option>
+                                       </select>
+                                       <script>
+                                          $('#food_recommended-<%= data[0].result[i].restaurant_food_menu_id %>').val('<%= data[0].result[i].is_recommended %>');
+                                       </script>
+                                    </td>
+                                    <td style='text-align:center;'>
+                                       <div class='column'>
+                                          <button type='button'
+                                             class='food_resturant_update btn btn-primary modal-trigger'
+                                             data-modal='card-modal'
+                                             data-value='<%= data[0].result[i].restaurant_food_menu_id %>'>Update</button>
+                                          <Button class='food_resturant_delete btn btn-danger'
+                                             class='food_resturant_delete'
+                                             data-value='<%= data[0].result[i].restaurant_food_menu_id %>'>Remove</Button>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <% } %>
+                              </tbody>
+                           </table>
+                           <!--		Start Pagination -->
+                           <div class='pagination-container'>
+                              <nav>
+                                 <ul class="pagination">
+
+                                    <li data-page="prev">
+                                       <span> Previous <span class="sr-only">(current)</span></span>
+                                    </li>
+                                    <!--	Here the JS Function Will Add the Rows -->
+                                    <li data-page="next" id="prev">
+                                       <span> Next <span class="sr-only">(current)</span></span>
+                                    </li>
+                                 </ul>
+                              </nav>
+                           </div>
+
+                        </div>
+                     </div>
+                     <!-- /User table widget -->
+                  </div>
+               </div>
+               <!-- /Widgets -->
+            </div>
+            <!-- /Main content -->
+         </div>
+         <!-- /Main view -->
+      </div>
+
+
+      <table class="cloneTable" style="display: none!important;">
+         <tr class="cloneRow">
+            <td style='text-align:center;' class=""><img src='' alt='' class="food_img"></td>
+            <td style='text-align:center;' class="food_Name"></td>
+            <td style='text-align:center;' class="food_Category"></td>
+            <td style='text-align:center;' class="food_Quantity"></td>
+            <td style='text-align:center;' class="food_Price"></td>
+            <td style='text-align:center;'><select class='food_status  food-select order_Status'>
+                  <option value='1'>Yes</option>
+                  <option value='0'>No</option>
+               </select></td>
+            <td style='text-align:center;'><select class='food_recommended  food-select order_Status'>
+                  <option value='1'>Yes</option>
+                  <option value='0'>No</option>
+               </select></td>
+            <td style='text-align:center;'>
+               <div class='column'>
+                  <button type='button' class='food_resturant_update update-modal btn btn-primary modal-trigger'
+                     data-modal='card-modal'>Update</button>
+                  <Button class='food_resturant_delete btn btn-danger' class='food_resturant_delete'>Remove</Button>
+               </div>
+            </td>
+         </tr>
+      </table>
+
+
+   </div>
+   <!-- /Dashboard Wrapper -->
+   </div>
+   <!-- Add New Dish Modal -->
+   <div class="column">
+      <!-- Card modal -->
+      <div id="card-modal" class="modal modal-sm" style="width:100%;">
+         <div class="modal-background"></div>
+         <div class="modal-card modal-content z-index-101" style="width: 80%!important;">
+            <!-- User table widget -->
+            <header class="modal-card-head">
+               <p class="modal-card-title">Add New Item in Menu</p>
+               <!-- <input type="text" class="search_food"> -->
+               <button class="delete is-medium modal-dismiss" aria-label="close"></button>
+            </header>
+            <form autocomplete="off" method="POST" action="/addFoodInMenu" id="foodform">
+               <input type='hidden' class="txt-style" name='restaurant_food_menu_id' id="restaurant_food_menu_id">
+               <input type='text' name='restaurantId' style="display: none;" value='<%= data[0].t1 %>'>
+               <table class="table hire-table">
+                  <tr>
+                     <td>
+                        <!-- <input type='text' class="txt-style" name='food_name' id="food_name" required autocomplete="on">  -->
+                        <div class="control-material is-primary">
+                           <input class="material-input " type="text" name='food_name' id="food_name" required>
+                           <script>
+                              autocomplete(document.getElementById("food_name"), foodNames);
+                           </script>
+                           <span class="material-highlight"></span>
+                           <span class="bar"></span>
+                           <label>Dish Name</label>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="control-material is-primary">
+                           <input class="material-input " type="text" name='food_price' id="food_price"
+                              autocomplete="on" required>
+                           <span class="material-highlight"></span>
+                           <span class="bar"></span>
+                           <label>Dish Cost</label>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <select name="food_quantity" class="select-quantity">
+                           <option>Select A Quantity</option>
+                           <option name="food_quantity" value="Full">Full</option>
+                           <option name="food_quantity" value="Half">Half</option>
+                           <option name="food_quantity" value="Single">Single</option>
+                           <option name="food_quantity" value="Family Pack">Family Pack</option>
+                           <option name="food_quantity" value="Double">Double</option>
+                        </select>
+                     </td>
+                     <td>
+                        <select name="is_veg" class="select-quantity">
+                           <option>Is Veg</option>
+                           <option name="is_veg" value="0">No</option>
+                           <option name="is_veg" value="1">Yes</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div class="control-material is-primary">
+                           <input class="material-input " type="text" name='menu_category' id="menu_category"
+                              autocomplete="on" required>
+                           <span class="material-highlight"></span>
+                           <span class="bar"></span>
+                           <label>Menu Category</label>
+                        </div>
+                     </td>
+                     <td>
+                        <select name="is_customizable" class="select-quantity">
+                           <option>Is Customizable</option>
+                           <option name="is_customizable" value="0">No</option>
+                           <option name="is_customizable" value="1">Yes</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <div class="control-material is-primary">
+                           <input class="material-input " type="text" name='food_description' id="food_description"
+                              autocomplete="on" required>
+                           <span class="material-highlight"></span>
+                           <span class="bar"></span>
+                           <label>Dish Description</label>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="control-material is-primary">
+                           <input class="material-input " type="text" name='ready_in' id="ready_in" autocomplete="on"
+                              required>
+                           <span class="material-highlight"></span>
+                           <span class="bar"></span>
+                           <label>Ready In</label>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="4" style="text-align:center;">
+                        <input type='submit' name='save' class='btn-save-menu' value="save">
+                     </td>
+                     <td>
+                        <!-- <div class="upload-btn-wrapper">
+                                 <input type="file" name="food_img" accept="image" id="food_img" />
+                           </div> -->
+                     </td>
+                  </tr>
+               </table>
+            </form>
+            <!-- /User table widget -->
+         </div>
+      </div>
+      <!-- /Card modal -->
+   </div>
+   <!-- /Add New Dish Modal -->
+
+   <!-- Update Menu Dish Modal -->
+   <div class="column">
+      <!-- Card modal -->
+      <div id="card-modal" class="modal modal-sm" style="width:100%;">
+         <div class="modal-background"></div>
+         <div class="modal-card modal-content z-index-101" style="width: 80%!important;">
+            <!-- User table widget -->
+            <header class="modal-card-head">
+               <p class="modal-card-title">Select Dish</p>
+               <input type="text" class="search_food">
+               <button class="delete is-medium modal-dismiss" aria-label="close"></button>
+            </header>
+            <form method="GET" action="/addFoodInMenu">
+               <table class="table hire-table">
+                  <tr>
+                     <td>Dish Name</td>
+                     <td> <input type='text' name='food_name' id="food_name" required> </td>
+                     <td>Cost</td>
+                     <td> <input type='text' name='food_price' id="food_price" required> </td>
+                  </tr>
+                  <tr>
+                     <td>Quantity</td>
+                     <td>
+                        <select name="food_quantity">
+                           <option>Select A Quantity</option>
+                           <option name="food_quantity" value="Full">Full</option>
+                           <option name="food_quantity" value="Half">Half</option>
+                           <option name="food_quantity" value="Single">Single</option>
+                           <option name="food_quantity" value="Family Pack">Family Pack</option>
+                           <option name="food_quantity" value="Double">Double</option>
+                        </select>
+                     </td>
+                     <td>Is Veg?</td>
+                     <td>
+                        <input type='radio' value='0' name='is_veg' id="is_veg" required>No
+                        <input type='radio' value='1' name='is_veg' id="is_veg" required>Yes
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Menu Category</td>
+                     <td> <input type='text' name='menu_category' id="menu_category" required> </td>
+                     <td>Is Customizable</td>
+                     <td>
+                        <input type='radio' value='0' name='is_customizable' id="is_customizable" required>No
+                        <input type='radio' value='1' name='is_customizable' id="is_customizable" required>Yes
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Dish Description</td>
+                     <td> <input type='text' name='food_description' id="food_description" required> </td>
+                     <td>Ready In?</td>
+                     <td> <input type='text' name='ready_in' id="ready_in" required> </td>
+                  </tr>
+                  <tr>
+                     <td><input type='submit' name='save' value="save"></td>
+                  </tr>
+               </table>
+            </form>
+            <!-- /User table widget -->
+         </div>
+      </div>
+      <!-- /Card modal -->
+   </div>
+   <!-- /Update Menu Dish Modal -->
+   </div>
+   <!-- Main dashboard container -->
+   <!-- /Main -->
+   <!-- Footer -->
+   <footer class="footer">
+      <div class="container bot-footer">
+         <div class="has-text-centered">
+            <div class="has-text-centered">
+               <img class="small-footer-logo" src="assets/images/logos/bulkit-logo-g.png" alt="">
+            </div>
+         </div>
+         <div class="has-text-centered">
+            <span class="more-info-company">Scan Eat Enjoy</span>
+         </div>
+      </div>
+   </footer>
+   <!-- /Footer -->
+
+   <!-- Core js -->
+   <script src="assets/js/core/modernizr.min.js"></script>
+   <!-- Plugins js -->
+   <script src="assets/js/chartjs/Chart.bundle.min.js"></script>
+   <script src="assets/js/peity/peity.min.js"></script>
+   <script src="assets/js/ggpopover/ggtooltip.js"></script>
+   <script src="assets/js/iziToast/iziToast.min.js"></script>
+   <script src="assets/js/datepicker/datepicker.min.js"></script>
+   <script src="assets/js/wickedpicker/wickedpicker.min.js"></script>
+   <script src="assets/js/chosen/chosen.jquery.min.js"></script>
+   <!-- Vmap -->
+   <script src="assets/js/jqvmap/jquery.vmap.js"></script>
+   <script src="assets/js/jqvmap/maps/jquery.vmap.usa.js"></script>
+   <script src="assets/js/jqvmap/data/jquery.vmap.sampledata.js"></script>
+   <!-- Bulkit js -->
+   <script src="assets/js/common.js"></script>
+   <!-- Page specific js -->
+   <script src="assets/js/pages/dashboard.js"></script>
+   <script src="assets/js/pages/components-modals.js"></script>
+   <script src="assets/js/pages/components-quickview.js"></script>
+</body>
+
+</html>

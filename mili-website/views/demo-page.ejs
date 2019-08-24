@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mili</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <!-- Core css -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" id="bulma" href="assets/css/bulma.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/firebase.js"></script>
+    <!-- <script src="js/authentication.min.js"></script> -->
+    <script src="js/authentication.js"></script>
+    <script src="js/bulkit.js"></script>
+    <script src="assets/js/waiwait.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/core_lemonade.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/core_green.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Core css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/core_demo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/home_style.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/chosen/chosen.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/highlightjs/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/wallop/wallop.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/wallop/wallop--fade.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/iziToast/iziToast.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+    <!-- Plugins css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/core_flashy.css">
+</head>
+
+<style>
+  div#main-hero {
+    background: url(assets/images/bg/dashboard/menu-restaurant-vintage-table.png);
+}
+</style>
+
+<body>
+
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+
+    <!-- Hero and nav -->
+    <div class="hero is-medium">
+        <div class="navbar-wrapper navbar-fade">
+            <div class="hero-head">
+
+                <!-- Nav -->
+                <div class="container">
+                    <nav class="nav">
+                        <div class="container big">
+                            <div class="nav-left shrink">
+                                <a class="nav-item mililogo" href="/">
+                                    <img src="assets/images/logos/brands/milithelogo-1.png" alt="">
+                                    <!-- MILI -->
+                                </a>
+                                <!-- Sidebar trigger -->
+                            </div>
+                            <a href="/#process" class="nav-item is-tab nav-inner is-not-mobile">
+                                How it work?
+                            </a>
+                            <a href="demo-page" class="nav-item is-tab nav-inner is-not-mobile">
+                                Demo
+                            </a>
+                        </div>
+                        <!-- Responsive toggle -->
+                        <span class="nav-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <div class="nav-right nav-menu">
+                            <a href="/" class="nav-item is-tab nav-inner is-menu-mobile">
+                                Home
+                            </a>
+                            <a href="/#process" class="nav-item is-tab nav-inner is-menu-mobile">
+                                How it work?
+                            </a>
+                            <span class="nav-item">
+                                <a href="login" id="signup-btn" class="button button-signup btn-outlined is-bold btn-align primary-btn rounded raised">
+                                    Log in
+                                </a>
+                            </span>
+                        </div>
+                </div>
+                </nav>
+            </div>
+            <!-- /Nav -->
+
+        </div>
+    </div>
+    <!-- Hero image -->
+    <script>
+
+                </script> 
+    <div id="main-hero" class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered pt-80 pb-80">
+                <div class="column is-5 signup-column has-text-left">
+                    <h1 class="title main-title text-bold is-2">
+                        Get Started
+                    </h1>
+                    <h2 class="subtitle is-5 light-text no-margin-bottom">
+                        Take control over your business by deploying an all in one restaurant management system.
+                    </h2>
+                    <br>
+                    <!-- Signup form -->
+                    <div class="signup-block columns">
+                        <div class="column is-4"></div>
+                        <form>
+                            <div class="control column is-4" style="text-align:center;">
+                                <!-- <input type="email" class="input" id="new_email" placeholder="Your email address"> -->
+                                <button class="button btn-align secondary-btn raised"><a href="signup" onclick="subEmail();" style="color:white">Sign Up</a></button>
+                            </div>
+                            <div id='demo' style="color:white"></div>
+                            <style>
+                            .signup-block .control button{
+                                position : relative;
+                            }
+                            </style>
+                            <% include data_parser.ejs %>
+                            <script>
+                                    // function subEmail(){
+                                    //     console.log("****************");
+                                    //     var test="Amit@gmail.com";
+                                    //     var new_email=document.getElementById('new_email').value;
+                                        // var queryString = "?para1=" + new_email;
+                                        // window.location.href = "signup" + queryString;
+                                    // }
+                                </script>
+                        </form>
+                        <div class="column is-4"></div>
+                    </div>
+                    <!-- /Signup form -->
+                </div>
+                <div class="column is-offset-1">
+                    <!-- Hero mockup -->
+                    <figure class="image is-hidden-mobile">
+                        <img src="assets/images/demo/SS_dashboard.PNG" alt="">
+                    </figure>
+                    <!-- /Hero mockup -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Hero image -->
+            <!-- UI section -->
+            <section class="section section-feature-grey is-medium">
+                <div class="container">
+                    <!-- Title -->
+                    <div class="section-title-wrapper">
+                        <div class="bg-number">1</div>
+                        <h2 class="title section-title has-text-centered dark-text"> Made to be Simple</h2>
+                        <div class="subtitle has-text-centered is-tablet-padded">
+                            All you need is a data stream. It could be anything. Our app connects to it and immediatly starts giving you insight.
+                        </div>
+                    </div>
+    
+                    <div class="content-wrapper">
+                        <!-- UI block -->
+                        <div class="columns is-vcentered">
+                            <!-- Content -->
+                            <div class="column is-4">
+                                <div class="icon-subtitle"><i class="im im-icon-Laptop-Phone"></i></div>
+                                <h2 class="title section-subtitle dark-text text-bold is-2">
+                                    A simple and clean UI
+                                </h2>
+                                <span class="section-feature-description">
+                                    The Business requirements gathering step aims to identify the end-users' key business requirements and KPI's to build customized dashboards that meet their needs. Well-defined requirements are the foundation for a clear, comprehensible dashboard, that enables the end-user to gain business insights.  
+                                </span>
+                                <div class="pt-20 pb-20">
+                                    <a href="#" class="button button-cta primary-btn rounded raised">See it in action</a>
+                                </div>
+                            </div>
+                            <!-- Large UI -->
+                            <div class="column is-9 is-offset-2 ">
+                                <img src="assets/images/demo/SS_dashboard.PNG" class="dashboard-img" alt="">
+                            </div>
+                        </div>
+                        <!-- /UI block -->
+                    </div>
+                </div>
+            </section>
+            <!-- /UI section -->
+        <!-- Slanted feature Section -->
+        <section id="business-types" class="section is-medium section-primary is-small is-skewed-sm is-relative huge-pb">
+            <div class="container slanted-container is-reverse-skewed-sm">
+                <div class="columns is-vcentered">
+                    <!-- Content -->
+                    <div class="column is-5 ">
+                        <div class="content padding-20">
+                            <h2 class="parallax-title light-text text-bold">Easy to setup</h2>
+                            <p class="light-text">It is very easy wayt to setup in any type of restaurant in minimal time.</p>
+                            <div class="pb-10 pt-10">
+                                <a href="signup" class="button button-cta light-btn btn-outlined rounded is-bold is-title-reveal">
+                                    Try it free
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- Featured image -->
+                    <div class="column is-6 is-offset-1">
+                        <img class="featured-svg" src="assets/images/illustrations/UI/analytic-widgets.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Slanted feature Section -->
+                <!-- Responsive Section -->
+                <div class="section is-medium">
+                    <div class="container">
+                        <!-- Title -->
+                        <div class="section-title-wrapper">
+                            <div class="bg-number">2</div>
+                            <h2 class="title section-title has-text-centered dark-text">Natively responsive</h2>
+                            <div class="subtitle has-text-centered is-tablet-padded">
+                                No need to rely on big-screen monitor, you can use a mobile device, everything is fully responsive.
+                            </div>
+                        </div>
+        
+                        <div class="content-wrapper">
+                            <div class="columns is-vcentered">
+                                <!-- Image -->
+                                <div class="column is-7">
+                                    <div class="">
+                                        <figure class="image is-4-by-3">
+                                            <img class="first" src="assets/images/illustrations/mockups/startup/ipads.png" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <div class="column is-4 is-offset-1">
+                                    <div class="icon-subtitle"><i class="im im-icon-Monitor-Tablet"></i></div>
+                                    <h2 class="title section-subtitle dark-text text-bold is-2">
+                                        App to download
+                                    </h2>
+                                    <span class="section-feature-description">Now everything in restaurants can be managed by mobile devices without the need of computer-system.</span>
+                                    <div class="mt-10">
+                                        <a href="#" style="display:none;" class="button btn-align btn-more is-link color-primary is-title-reveal">
+                                            Learn more about this <i class="sl sl-icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Responsive Section -->
+    <% include footer.ejs %>
+
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script> -->
+
+    <!-- Core js -->
+    <!-- Plugins js -->
+    <!-- Core js -->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <!-- <script src="assets/js/core/modernizr.min.js"></script> -->
+    <!-- Plugins js -->
+    <!-- <script src="assets/js/scrollspy/scrollspy.min.js"></script> -->
+    <!-- <script src="assets/js/waypoints/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="assets/js/waypoints/sticky.min.js"></script> -->
+    <!-- <script src="assets/js/slick-carousel/slick.min.js"></script> -->
+    <!-- <script src="assets/js/chosen/chosen.jquery.min.js"></script> -->
+    <!-- <script src="assets/js/vivus/vivus.min.js"></script> -->
+    <!-- <script src="assets/js/ggpopover/ggtooltip.js"></script> -->
+    <!-- <script src="assets/js/highlightjs/highlight.pack.js"></script> -->
+    <!-- Bulkit js -->
+    <script src="assets/js/main.js"></script>
+    <!-- Bulkit js -->
+    <!-- Page specific js -->
+    <!-- <script src="assets/js/pages/components-modals.js"></script> -->
+    <div id="backtotop"><a href="#"></a></div>
+    <script src="assets/js/waiwait.js"></script>
+    <!-- <script src="assets/js/pages/demo.js"></script> -->
+
+
+</body>
+<style>
+@media screen and (max-width: 768px){
+.nav .nav-toggle.is-active span {
+    background-color: #04b261!important;
+}
+}
+</style>
+</html>

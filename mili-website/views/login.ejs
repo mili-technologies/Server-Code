@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <!-- Core css -->
+    <script src="js/jquery.js"></script>
+    <script src="js/firebase.js"></script>
+    <!-- <script src="js/authentication.min.js"></script> -->
+    <script src="js/authentication.js"></script>
+    <link rel="stylesheet" id="bulma" href="assets/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/core.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+    <style>
+        .flex-card {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .security_code,
+        .security_password {
+            display: none;
+        }
+
+        #loginForm {
+            text-align: center;
+        }
+
+        #toast {
+            visibility: hidden;
+            max-width: 50%;
+            height: 5%;
+            margin: auto;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        #toast #desc {
+            color: #fff;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #toast.show {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+
+    <!-- Hero and nav -->
+    <div class="hero hero-waves-dark is-fullheight is-relative is-light-grey">
+        <div class="navbar-wrapper navbar-fade">
+            <div class="hero-head">
+
+                <!-- Nav -->
+                <div class="container">
+                    <nav class="nav">
+                        <div class="container big">
+                            <div class="nav-left">
+                                <a class="nav-item" href="home">
+                                    <img src="assets/images/logos/bulkit-logo-lemonade.png" alt="">
+                                </a>
+                                <!-- Sidebar trigger -->
+                                <!-- <a id="navigation-trigger" class="nav-item hamburger-btn" href="javascript:void(0);">
+                                    <span class="menu-toggle">
+                                        <span class="icon-box-toggle">
+                                            <span class="rotate">
+                                                <i class="icon-line-top"></i>
+                                                <i class="icon-line-center"></i>
+                                                <i class="icon-line-bottom"></i>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </a> -->
+                                <a href="demo-page" class="nav-item is-tab nav-inner is-not-mobile">
+                                    Demo Page
+                                </a>
+                                <!-- <a href="landing-login.html" class="nav-item is-tab nav-inner is-not-mobile">
+                                    Login
+                                </a> -->
+                            </div>
+                            <!-- Responsive toggle -->
+
+                            <div class="nav-right nav-menu">
+
+                                <a href="demo-page" class="nav-item is-tab nav-inner is-menu-mobile">
+                                    Demo Page
+                                </a>
+                                <a href="login" class="nav-item is-tab nav-inner is-menu-mobile">
+                                    Login
+                                </a>
+                                <span class="nav-item">
+                                    <a href="signup"
+                                        class="button button-signup btn-align primary-btn rounded btn-outlined is-bold">
+                                        Sign up
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- /Nav -->
+
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <!-- Modal LOGIN Markup -->
+
+        <div id="vertical-form-modal" name="loginForm" class="main-login" id="">
+            <div class="modal-content" id="loginForm">
+                <div class="flex-card simple-shadow">
+                    <div id="snackbar"></div>
+                    <div class="card-body">
+                        <h2 class="title has-text-centcered is-3 mb-40" id="login">Login</h2>
+                        <h2 class="title has-text-centcered is-3 mb-40" id="forget_lbl" style='display: none;'>Forget
+                            Password
+                        </h2>
+                        <div class="model1" style="display:none;">
+                            <div class="inner-model">X</div>
+                            please enter email id.
+                        </div>
+                        <div class="control-material is-accent">
+                            <input class="material-input" type="text" name="login_email" id="login_email" required>
+                            <span class="material-highlight"></span>
+                            <span class="bar"></span>
+                            <label>Email ID *</label>
+                        </div>
+                        <div class="model2" style="display:none;">
+                            please enter email id.
+                        </div>
+                        <div class="control-material is-accent security_code">
+                            <input class="material-input" type="text" name="security_code" id="security_code" required>
+                            <span class="material-highlight"></span>
+                            <span class="bar"></span>
+                            <label>Security Code *</label>
+                            <div class="no-account is-accent" id="resend_security_code_login" style="float: left;">
+                                <a>Resend security code?</a>
+                            </div>
+                        </div>
+                        <div class="control-material is-accent security_password">
+                            <input class="material-input" type="password" name="security_password"
+                                id="security_password" required>
+                            <span class="material-highlight"></span>
+                            <span class="bar"></span>
+                            <label>Password *</label>
+                        </div>
+                        <div class="control-material is-accent">
+                            <input class="material-input" type="password" name="login_password" id="login_password"
+                                required>
+                            <span class="material-highlight"></span>
+                            <div class="show-password">
+                                <input type="checkbox" onclick="myFunction()" style="margin-top: 10px;"> Show Password
+                                <span class="bar"></span>
+                            </div>
+                            <label id='lbl_pass'>Password *</label>
+                        </div>
+                        <p class="has-text-left mt-30">
+                            <div class="no-account is-accent" id="forgot_pass">Forgot Password?</div>
+                        </p>
+                        <script>
+                            function myFunction() {
+                                var x = document.getElementById("login_password");
+                                if (x.type === "password") {
+                                    x.type = "text";
+                                } else {
+                                    x.type = "password";
+                                }
+                            }
+                            $('#forgot_pass').click(function () {
+                                $('#lbl_pass,#login_password,#forgot_pass,#donot_account,#login').hide();
+                                $('.terms-css').css("cssText", "display: none!important");
+                                $('.show-password').css("cssText", "display: none!important");
+                                $('#main-login').css("cssText", "display: none!important");
+                                $('.security_code').css("cssText", "display: none!important");
+                                $('.security_password').css("cssText", "display: none!important");
+                                $('#forgot-password,#forget_lbl').show();
+                                $('#login_show').show();
+                                $('.verify_acc').css("cssText", "display: none!important");
+                            });
+                            $('.login_pass').click(function () {
+                                $('#login_password').css("cssText", "display:block!important");
+                            });
+                        </script>
+                        <div class="mt-20">
+                            <div id="main-login-class-custom">
+                                <button
+                                    class="button button-cta btn-align accent-btn raised is-fullwidth no-lh button_login"
+                                    onclick="signIn();" id='main-login'>Login</button>
+                            </div>
+                            <p class="has-text-left mt-30 term-css-parent">
+                                <div class="terms-css">
+                                    By logging in, you agree to
+                                </div>
+                                <div class="terms-css">
+                                    Terms & conditions and Privacy Policy of YWait.
+                                </div>
+                            </p>
+                            <button
+                                class="forgot_password button button-cta btn-align accent-btn raised is-fullwidth no-lh button_login"
+                                onclick='sendPasswordReset();' id='forgot-password' style="display:none!important;">Send
+                                Email</button>
+                            <button
+                                class="verify_acc button button-cta btn-align accent-btn raised is-fullwidth no-lh button_login"
+                                onclick='sendVerifyLink();' id='verify-acc' style="display:none!important;">Click here
+                                to
+                                Verify</button>
+
+                            <p class="has-text-left mt-30 back-to-login">
+                                <a class="no-account is-accent login_pass" id="login_show" style="display:none;">Back to
+                                    Login</a>
+                            </p>
+                            <p class="has-text-left mt-30 create-acc">
+                                <a class="no-account is-accent" href="signup" id='donot_account'>Create New Account</a>
+                            </p>
+                            <div id="toast" class="">
+                                <div id="desc"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="modal-close is-large is-hidden" id="close_mode_login" aria-label="close"></button>
+        </div>
+        <style>
+            .subtitle:not(:last-child),
+            .title:not(:last-child) {
+                text-align: center;
+            }
+        </style>
+
+        <script>
+
+            $('#close_mode_login,#login_show').click(function () {
+                $('#lbl_pass,#login_password,#forgot_pass,#donot_account,#login').show();
+                $('.terms-css').css("cssText", "display: block!important");
+                $('.show-password').css("cssText", "display: block!important");
+                $('#main-login').css("cssText", "display: block!important");
+                $('.security_code').css("cssText", "display: none!important");
+                $('.security_password').css("cssText", "display: none!important");
+                $('#forgot-password,#forget_lbl').hide();
+                $('#login_show').hide();
+                $('.forgot_password').css("cssText", "display: none!important");
+            });
+
+        </script>
+        <!-- /Modal LOGIN Markup -->
+        <style>
+            @media screen and (max-width: 768px) {
+
+                .modal-card,
+                .modal-content {
+                    margin: auto !important;
+                    max-height: fit-content;
+                    overflow: auto;
+                    position: relative;
+                    width: 100%;
+                }
+
+                .flex-card.simple-shadow {
+                    margin-top: 10%;
+                    margin-bottom: 10%;
+                }
+            }
+
+            @media screen and (min-width: 769px) {
+
+                .modal-card,
+                .modal-content {
+                    width: 30%;
+                }
+            }
+
+            @media screen and (max-width: 420px) {
+
+                .modal-card,
+                .modal-content {
+                    width: auto;
+                }
+
+                .flex-card.simple-shadow {
+                    margin-top: 10%;
+                    margin-bottom: 10%;
+                }
+            }
+
+            .nav-item img {
+                max-height: 2.75rem;
+            }
+
+            .navbar-wrapper.navbar-fade,
+            .navbar-wrapper.navbar-minimal {
+                background-color: white;
+            }
+
+            .button.primary-btn.btn-outlined {
+                border-color: #04b261;
+                color: #04b261;
+            }
+
+            .button.button-signup.btn-outlined.is-bold:hover {
+                background-color: #04b261;
+                color: white;
+            }
+
+            .modal.is-active .modal-background {
+                background: -webkit-linear-gradient(45deg, #04b261 0%, #3adcb2e0 100%);
+            }
+
+            .forgot.is-accent,
+            .no-account.is-accent,
+            .return.is-accent {
+                color: #04b261 !important;
+            }
+
+            div#forgot_pass {
+                float: right;
+                margin-top: -34px;
+            }
+
+            .button.accent-btn {
+                border-color: #04b261;
+                background-color: #04b261;
+            }
+
+            .control-material.is-accent input.material-input:focus~label,
+            .control-material.is-accent input:valid~label,
+            .control-material.is-accent textarea:focus~label {
+                color: #04b261;
+            }
+
+            p.has-text-left.mt-30 {
+                text-align: center;
+            }
+
+            .terms-css {
+                color: #8a8383 !important;
+                text-align: center;
+                font-size: 13px;
+            }
+
+            .create-acc {
+                margin-top: 11px;
+                margin-bottom: -8px;
+            }
+
+            .term-css-parent {
+                margin-top: 12px;
+            }
+
+            .show-password {
+                float: left;
+                margin-top: 5px;
+            }
+
+            #snackbar,
+            #snackbar_signin {
+                visibility: hidden;
+                min-width: 250px;
+                background-color: #f44336;
+                /* Red */
+                color: white;
+                text-align: center;
+                border-radius: 2px;
+                padding: 10px;
+                z-index: 1;
+                left: 50%;
+                top: 30px;
+                font-size: 12px;
+                border-radius: 5px;
+            }
+
+            #snackbar.show,
+            #snackbar_signin.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            @-webkit-keyframes fadein {
+                from {
+                    top: 0;
+                    opacity: 0;
+                }
+
+                to {
+                    top: 30px;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadein {
+                from {
+                    top: 0;
+                    opacity: 0;
+                }
+
+                to {
+                    top: 30px;
+                    opacity: 1;
+                }
+            }
+
+            @-webkit-keyframes fadeout {
+                from {
+                    top: 30px;
+                    opacity: 1;
+                }
+
+                to {
+                    top: 0;
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fadeout {
+                from {
+                    top: 30px;
+                    opacity: 1;
+                }
+
+                to {
+                    top: 0;
+                    opacity: 0;
+                }
+            }
+        </style>
+        <!-- /Hero image -->
+        <!-- /Hero and nav -->
+
+        <!-- Footer -->
+        <% include footer.ejs %>
+        <!-- /Footer -->
+
+        <!-- Side navigation -->
+
+        <!-- /Side navigation -->
+
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+
+
+
+        <!-- Core js -->
+        <script src="assets/js/core/jquery.min.js"></script>
+        <script src="assets/js/core/modernizr.min.js"></script>
+        <!-- Plugins js -->
+        <script src="assets/js/ggpopover/ggtooltip.js"></script>
+        <script src="assets/js/scrollreveal/scrollreveal.min.js"></script>
+        <!-- Bulkit js -->
+        <script src="assets/js/main.js"></script>
+        <!-- Page specific js -->
+        <script src="assets/js/pages/auth.js"></script>
+        <script src="assets/js/pages/landing.js"></script>
+
+</body>
+
+</html>

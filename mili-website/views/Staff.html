@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Core css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom_dashboard.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/iziToast/iziToast.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/datepicker/datepicker.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/wickedpicker/wickedpicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/chosen/chosen.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+    </link>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <title>Mili-Staff</title>
+    <script>
+        $(document).ready(function () {
+            $(".search_menu").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $(".box").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            $(".update_button").on("click", function () {
+                alert("!!DO YOU REALY WANT TO UPDATE PRFOILE!!");
+            });
+            $(".remove_button").on("click", function () {
+                alert("!!DO YOU REALY WANT TO DELETE PRFOILE!!");
+            });
+
+
+        }
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <nav class="main-menu">
+
+        <div class="main-menu-inner">
+            <!-- Side icon menu -->
+            <ul>
+                <li class="main-logo">
+                    <a href="dashboard.html"><img src="assets/images/logos/square-violet.svg" alt=""></a>
+                </li>
+                <li class="is-active left-icon" style="margin-top:50px">
+                    <a href="dashboard"> <i class="sl sl-icon-speedometer"></i><br>
+                        Dashboard</a>
+                </li>
+                <li class=" is-active left-icon">
+                    <a href="kitchen1"><i class="sl sl-icon-docs"></i><br>
+                        kitchen
+                    </a>
+                </li>
+                <li class=" left-icon">
+                    <a href="menu"><i class="sl sl-icon-docs"></i><br>Menu</a>
+                </li>
+                <li class=" left-icon" data-child-menu="business-menu">
+                    <a href="staff"> <i class="sl sl-icon-briefcase"></i><br>Staff</a>
+                </li>
+                <li class="side-icon" data-child-menu="misc-menu">
+                    <i class="sl sl-icon-graph"></i>
+                </li>
+                <li class="side-icon" data-child-menu="settings-menu">
+                    <i class="sl sl-icon-settings"></i>
+                </li>
+            </ul>
+            <!-- /Side icon menu -->
+
+        </div>
+    </nav>
+    <!-- Child push sidebar menu -->
+    <nav class="child-menu">
+        <div class="child-menu-inner">
+            <!-- Child menu header -->
+            <ul>
+                <li class="child-header">
+                    <div class="sidebar-title">Navigation</div>
+                    <a id="close-child-menu" href="#" class="menu-wrapper">
+                        <span class="icon-box-toggle ef-4">
+                            <span class="rotate">
+                                <i class="icon-line-top"> </i>
+                                <i class="icon-line-center"> </i>
+                                <i class="icon-line-bottom"> </i>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <!-- /Child menu header -->
+            <!-- Sidebar menu 1 -->
+            <ul id="dashboard-menu" class="sidebar-menu is-active animated preFadeInRIght fadeInRight">
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">dashboard</span>Dashboard</a>
+                    <ul>
+                        <li><a href="dashboard.html">Main layout</a></li>
+                        <li><a href="dashboard-blank.html">Blank page</a></li>
+                        <li><a href="dashboard-login.html">Login page</a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">insert_chart</span>Analytics</a>
+                    <ul>
+                        <li><a href="dashboard-chartjs.html">Chart js</a></li>
+                        <li><a href="dashboard-billboardjs.html">Billboard js</a></li>
+                        <li><a href="dashboard-peityjs.html">Peity js</a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">developer_board</span>Widgets</a>
+                    <ul>
+                        <li><a href="dashboard-widgets-data.html">Data widgets</a></li>
+                        <li><a href="dashboard-widgets-social.html">Social widgets</a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">view_agenda</span>Feed</a>
+                    <ul>
+                        <li><a href="dashboard-feed.html">Social feed</a></li>
+                        <li><a href="dashboard-feed-post.html">Post Item</a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">invert_colors</span>Styles</a>
+                    <ul>
+                        <li><a href="dashboard.html">Light sidebar</a></li>
+                        <li><a href="dashboard-dark-nav.html">Dark sidebar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Sidebar menu 1 -->
+            <!-- Sidebar menu 2 -->
+            <ul id="documents-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">insert_drive_file</span>Documents</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Document list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Document details <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Invoice <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">assignment</span>Projects</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Project list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Project details <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">assignment_turned_in</span>Tasks</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Task list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Kanban board</a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">library_books</span>Forms</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Step form <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Steps <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Sidebar menu 2 -->
+            <!-- Sidebar menu 3 -->
+            <ul id="business-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">group</span>Contacts</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Contact list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Contact grid <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Contact details <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">person_add</span>Leads</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Leads list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Add lead <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">attach_money</span>Deals</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Deals list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Single Deal <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Sidebar menu 3 -->
+            <!-- Sidebar menu 4 -->
+            <ul id="misc-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">grid_on</span>Datatables</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Example 1 <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Example 2 <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Example 3 <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">speaker_notes</span>Faq</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Faq home <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Faq article <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">thumbs_up_down</span>Forum</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Forum home <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Forum thread <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">email</span>Mailbox</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Inbox <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Compose <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Sidebar menu 4 -->
+            <!-- Sidebar menu 5 -->
+            <ul id="settings-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">settings</span>Global settings</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Preferences <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Change password <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">account_circle</span>User settings</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">User list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Add user <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Access rights <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+                <li class="have-children">
+                    <a class="parent-link" href="#"><span class="material-icons">domain</span>Organizations</a>
+                    <ul>
+                        <li><a href="javascript:void(0);">Organizations list <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                        <li><a href="javascript:void(0);">Add organization <span class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Sidebar menu 5 -->
+        </div>
+    </nav>
+    <!-- /Child push sidebar menu -->
+    <nav class="nav dashboard-nav has-shadow">
+        <div class="container is-fluid">
+            <!-- Nav left -->
+            <div class="nav-left">
+                <!-- Logout button -->
+                <div class="nav-item nav-icon logout-button">
+                    <i class="sl sl-icon-power"></i>
+                </div>
+                <!-- /Logout button -->
+                <!-- Reader mode switch -->
+                <div class="nav-item reader-switch is-hidden-desktop is-hidden-tablet">
+                    <div class="field">
+                        <input id="reader-mode-switch" type="checkbox" name="reader-mode-switch" class="switch is-outlined is-primary is-small">
+                        <label id="reader-mode-toggle" for="reader-mode-switch"></label>
+                    </div>
+                </div>
+                <!-- Reader mode switch -->
+                <!-- Quick search (hidden on mobile) -->
+                <div class="nav-item">
+                    <div class="field is-hidden-mobile">
+                        <div class="searchbox control has-icons-left">
+                            <input class="input is-secondary-focus" type="text" placeholder="Quick search">
+                            <span class="icon is-left">
+                                <i class="sl sl-icon-magnifier"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Quick search -->
+                <!-- Global search (visible on mobile only) -->
+                <div class="nav-item nav-icon search-icon modal-trigger is-hidden-desktop is-hidden-tablet" data-modal="search-modal">
+                    <i class="sl sl-icon-magnifier"></i>
+                </div>
+                <!-- /Global search -->
+                <!-- Right sidebar trigger (visible on mobile only)  -->
+                <div class="nav-item nav-icon chat-button is-hidden-desktop is-hidden-tablet" data-show="quickview"
+                    data-target="main-quickview">
+                    <i class="im im-icon-Speach-Bubble11"></i>
+                </div>
+                <!-- /Right sidebar trigger -->
+            </div>
+            <!-- /Nav left -->
+            <!-- Nav right -->
+            <div class="nav-right nav-menu">
+                <!-- Add employe -->
+                <div class="nav-item nav-icon search-icon modal-trigger" data-modal="plus-modal">
+                    <i class="sl sl-icon-plus" id="add_btn"></i>
+                </div>
+                <!-- /Add employe -->
+                <!-- Notifications dropdown (hidden on mobile) -->
+                <div class="nav-item drop-pop is-centered nav-icon">
+                    <a href="#" class="nav-item nav-icon nav-inner is-active">
+                        <i class="sl sl-icon-bell"><span class="new-circle gelatine"></span></i>
+                    </a>
+                    <div class="drop-wrapper notifications-drop">
+                        <div class="drop-inner has-arrow">
+                            <div class="notifications-header has-text-centered">
+                                <h3>Notifications</h3>
+                            </div>
+                            <div class="notifications-body">
+                                <ul class="notifications-list">
+                                    <li>
+                                        <i class="sl sl-icon-heart"></i>
+                                        <div class="notification-content">
+                                            <img src="https://place-hold.it/250x250" alt="">
+                                            <div class="notification-text">
+                                                <div class="text">
+                                                    <b>Henry</b> liked your <b>comment</b>.
+                                                </div>
+                                                <div class="timestamp">
+                                                    23 minutes ago
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="sl sl-icon-check"></i>
+                                        <div class="notification-content">
+                                            <img src="https://place-hold.it/250x250" alt="">
+                                            <div class="notification-text">
+                                                <div class="text">
+                                                    <b>Marjory</b> followed you.
+                                                </div>
+                                                <div class="timestamp">
+                                                    1 hour ago
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="sl sl-icon-heart"></i>
+                                        <div class="notification-content">
+                                            <img src="https://place-hold.it/250x250" alt="">
+                                            <div class="notification-text">
+                                                <div class="text">
+                                                    <b>Marc</b> commented one of your tasks.
+                                                </div>
+                                                <div class="timestamp">
+                                                    Yesterday
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Notifications dropdown -->
+                <!-- Messages dropdown (hidden on mobile) -->
+                <div class="nav-item drop-pop is-centered nav-icon">
+                    <a href="#" class="nav-item nav-icon nav-inner is-active">
+                        <i class="sl sl-icon-envelope-open"><span class="new-circle gelatine"></span></i>
+                    </a>
+                    <div class="drop-wrapper emails-drop">
+                        <div class="drop-inner has-arrow">
+                            <div class="emails-header has-text-centered">
+                                <h3>Messages</h3>
+                            </div>
+                            <div class="emails-body">
+                                <ul class="emails-list">
+                                    <li>
+                                        <img src="https://place-hold.it/250x250" alt="">
+                                        <div class="email-content">
+                                            <div class="email-text">
+                                                <div class="text">
+                                                    Hello, after our last meetings, it seems that some goals
+                                                    were...
+                                                </div>
+                                                <div class="timestamp">
+                                                    Nov 09, 14:18
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="fake-avatar is-secondary">SB</span>
+                                        <div class="email-content">
+                                            <div class="email-text">
+                                                <div class="text is-read">
+                                                    We did not receive the order yet, can you please check if it
+                                                    has...
+                                                </div>
+                                                <div class="timestamp">
+                                                    Nov 05, 13:31
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="fake-avatar is-primary">JK</span>
+                                        <div class="email-content">
+                                            <div class="email-text">
+                                                <div class="text is-read">
+                                                    My boss was very grateful that you found a solution during the
+                                                    week as...
+                                                </div>
+                                                <div class="timestamp">
+                                                    Nov 05, 09:47
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Messages dropdown -->
+                <!-- Right sidebar trigger (desktop and tablet only) -->
+                <div class="nav-item nav-icon chat-button" data-show="quickview" data-target="main-quickview">
+                    <i class="im im-icon-Speach-Bubble11"></i>
+                </div>
+                <!-- /Right sidebar trigger -->
+            </div>
+            <!-- /Nav right -->
+        </div>
+        <div class="fab js-hamburger">
+            <div class="profile-container">
+                <div class="inner">
+                    <div class="container is-fluid">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-10 is-offset-1">
+                                    <div class="profile-sections-wrapper">
+                                        <!-- Profile notifications -->
+                                        <div id="profile-notifications" class="is-hidden">
+                                            <div class="columns">
+                                                <div class="column is-10 is-offset-1">
+                                                    <div class="flex-card is-top light-bordered raised animated preFadeInUp fadeInUp">
+                                                        <div class="title is-3 padding-20">Notifications <span class="b-badge is-accent">6
+                                                                New</span></div>
+                                                        <div class="card-body">
+                                                            <ol class="notifications-center">
+                                                                <!-- Notification item -->
+                                                                <li>
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <i class="im im-icon-Heart-2"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">30 minutes ago</div>
+                                                                        <b>5 users</b> liked your <b>publication</b> on
+                                                                        the
+                                                                        company's public blog
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li>
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <img src="https://place-hold.it/250x250" alt="">
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">2 hours ago</div>
+                                                                        <b>Marc Walters</b> commented on a <b>task</b>.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li>
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <img src="https://place-hold.it/250x250" alt="">
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">5 hours ago</div>
+                                                                        <b>3 new bugs</b> were reported by <b>Alex
+                                                                            Walsh</b>,
+                                                                        in
+                                                                        the <b>Analytics App</b> project.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li>
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <i class="im im-icon-Add"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">5 hours ago</div>
+                                                                        <b>8 new tasks</b> were added in the <b>Social
+                                                                            marketing</b>
+                                                                        project.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li>
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <img src="https://place-hold.it/250x250" alt="">
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">Yesterday, 09:31am</div>
+                                                                        <b>Marjory Cambell</b> joined the <b>Analytics
+                                                                            App</b>
+                                                                        project.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li>
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <i class="im im-icon-Yes"></i>
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">Yesterday, 08:42am</div>
+                                                                        <b>3 tasks</b> were approved in the <b>Social
+                                                                            marketing</b>
+                                                                        project.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li class="is-old">
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <img src="https://place-hold.it/250x250" alt="">
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">Monday, 07:57pm</div>
+                                                                        <b>Anthony Briggs</b> joined the <b>Analytics
+                                                                            App</b>
+                                                                        project.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li class="is-old">
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <img src="https://place-hold.it/250x250" alt="">
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">oct 23, 11:02am</div>
+                                                                        <b>Marc Walters</b> commented on a <b>task</b>
+                                                                        assigned
+                                                                        to you in the <b>Social marketing</b> project.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- Notification item -->
+                                                                <li class="is-old">
+                                                                    <div class="icon is-hidden-mobile">
+                                                                        <img src="https://place-hold.it/250x250" alt="">
+                                                                    </div>
+                                                                    <div class="description">
+                                                                        <div class="timestamp">oct 22, 2:12pm</div>
+                                                                        <b>Dan Baxter</b> sent you an <b>email</b> with
+                                                                        <b>3
+                                                                            attachments</b>.
+                                                                    </div>
+                                                                    <div class="controls is-hidden-mobile">
+                                                                        <span data-toggle="tooltip" data-placement="top"
+                                                                            data-title="Delete"><i class="sl sl-icon-trash"></i></span>
+                                                                    </div>
+                                                                </li>
+                                                            </ol>
+                                                            <!-- Load more -->
+                                                            <div class="has-text-centered mt-40">
+                                                                <button class="button btn-dash is-raised accent-btn rounded ripple no-lh">Load
+                                                                    more</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Profile notifications -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </nav>
+    <!-- /Top Navbar -->
+    <!-- Add Button On Click Event -->
+    <div id="id01" class="modal_add">
+        <span id="close" class="close_sym" title="Close Modal"><i class="fa fa-close"></i></span>
+        <form class="modal-content_add" action="/action_page.php">
+            <div class="container_add">
+                <label for="first-name"><b>First-Name</b></label>
+                <input type="text" placeholder="First-Name" name="first-name" required>
+
+                <label for="last-name"><b>Last-Name</b></label>
+                <input type="text" placeholder="Last-Name" name="last-name" required>
+
+                <label for="job-title"><b>Job-Title</b></label>
+                <select>
+                    <option value="kichen-staff">Kitchen-Staff</option>
+                    <option value="waiter">Waiter</option>
+                    <option value="managment-staff">Managment-Staff</option>
+                </select>
+
+                <label for='birth-date'><b>Birth-Date</b></label>
+                <input type="date" placeholder="Birth-Date" name="birth-date" required>
+
+                <lable for='gender'><b>Gender</b></lable>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for='email'><b>Email</b></label>
+                <input type="email" placeholder="Email" name="email" required>
+
+                <label for='phone-no'><b>Phone-No</b></label>
+                <input type="number" placeholder="Phone-No" name="phone-no" required>
+
+                <label for='address'><b>Address</b></label>
+                <input type="text" placeholder="Address" name="address" required>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="button" class="addbtn">ADD</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script>
+        var btn = document.getElementById("add_btn");
+        var modal = document.getElementById("id01");
+        var close = document.getElementById("close");
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        close.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+    <!-- /Add Button On Click Event -->
+    <!-- Employe search -->
+
+    <input class="input is-secondary-focus search_menu" type="text" placeholder="Search Employe">
+    <!-- /Employe search -->
+    <!-- Staff Member Cards -->
+    <div class=staff_member_cards>
+
+        <!-- Member-Card -->
+
+        <div class="box">
+
+            <div class="img">
+                <img src="assets/images/Avatar">
+            </div>
+
+            <h2>Priya Rajput<br></h2>
+            <button type="button" class="btn btn-primary update_button">Update</button>
+            <button type="button" class="btn btn-danger remove_button">Remove</button>
+
+            <p><br> Small discription about Employe</p>
+            <span>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </span>
+        </div>
+
+        <!-- /Member-Card -->
+        <!-- Member-Card -->
+
+        <div class="box">
+            <div class="img">
+                <img src="assets/images/Avatar">
+            </div>
+
+            <h2>Rohit gaikwad<br></h2>
+            <button type="button" class="btn btn-primary update_button">Update</button>
+            <button type="button" class="btn btn-danger remove_button">Remove</button>
+
+            <p><br> Small discription about Employe</p>
+            <span>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </span>
+        </div>
+
+        <!-- /Member-Card -->
+
+        <!-- Member-Card -->
+
+        <div class="box">
+            <div class="img">
+                <img src="assets/images/Avatar">
+            </div>
+
+            <h2>Narendra Nirban<br></h2>
+            <button type="button" class="btn btn-primary update_button">Update</button>
+            <button type="button" class="btn btn-danger remove_button">Remove</button>
+
+            <p><br> Small discription about Employe</p>
+            <span>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </span>
+        </div>
+
+        <!-- /Member-Card -->
+        <!-- Member-Card -->
+
+        <div class="box">
+            <div class="img">
+                <img src="assets/images/Avatar">
+            </div>
+
+            <h2>Adil Khan<br></h2>
+            <button type="button" class="btn btn-primary update_button">Update</button>
+            <button type="button" class="btn btn-danger remove_button">Remove</button>
+
+            <p><br> Small discription about Employe</p>
+            <span>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </span>
+        </div>
+
+        <!-- /Member-Card -->
+        <!-- Member-Card -->
+
+        <div class="box">
+            <div class="img">
+                <img src="assets/images/Avatar">
+            </div>
+
+            <h2>Sayli Devkhate<br></h2>
+            <button type="button" class="btn btn-primary update_button">Update</button>
+            <button type="button" class="btn btn-danger remove_button">Remove</button>
+
+            <p><br> Small discription about Employe</p>
+            <span>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </span>
+        </div>
+
+        <!-- /Member-Card -->
+        <!-- Member-Card -->
+
+        <div class="box">
+            <div class="img">
+                <img src="assets/images/Avatar">
+            </div>
+
+            <h2>Romi Osaam <br></h2>
+            <button type="button" class="btn btn-primary update_button">Update</button>
+            <button type="button" class="btn btn-danger remove_button">Remove</button>
+
+            <p><br> Small discription about Employe</p>
+            <span>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </span>
+        </div>
+
+        <!-- /Member-Card -->
+    </div>
+    <!-- Staff Member Cards -->
+    <!-- Core js -->
+    <script src="assets/js/core/modernizr.min.js"></script>
+    <!-- Plugins js -->
+    <script src="assets/js/chartjs/Chart.bundle.min.js"></script>
+    <script src="assets/js/peity/peity.min.js"></script>
+    <script src="assets/js/ggpopover/ggtooltip.js"></script>
+    <script src="assets/js/iziToast/iziToast.min.js"></script>
+    <script src="assets/js/datepicker/datepicker.min.js"></script>
+    <script src="assets/js/wickedpicker/wickedpicker.min.js"></script>
+    <script src="assets/js/chosen/chosen.jquery.min.js"></script>
+    <!-- Vmap -->
+    <script src="assets/js/jqvmap/jquery.vmap.js"></script>
+    <script src="assets/js/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="assets/js/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <!-- Bulkit js -->
+    <script src="assets/js/common.js"></script>
+    <!-- Page specific js -->
+    <script src="assets/js/pages/dashboard.js"></script>
+    <script src="assets/js/pages/components-modals.js"></script>
+    <script src="assets/js/pages/components-quickview.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

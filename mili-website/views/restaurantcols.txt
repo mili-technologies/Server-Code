@@ -1,0 +1,37 @@
+	restaurant_id	True	False	INT(10)	False	False	False	False		
+	restaurant_schema_name	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_name	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_lat	False	True	DECIMAL(10, 8)	False	False	False	False		
+	restaurant_long	False	True	DECIMAL(11, 8)	False	False	False	False		
+	restaurant_address	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_sublocality	False	True	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_locality	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_landmark	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_city	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_State	False	False	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_contact	False	False	INT(11)	False	False	False	False		
+	restaurant_zip_code	False	False	INT(6)	False	False	False	False		
+	restaurant_email_id	False	True	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_start_time	False	False	TIME	False	False	False	False		
+	restaurant_end_time	False	False	TIME	False	False	False	False		
+	restaurant_cost_two	False	True	DECIMAL(10, 0)	False	False	False	False		
+	restaurant_rating	False	True	INT(11)	False	False	False	False		
+	restaurant_description	False	True	TEXT	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_images_url	False	True	VARCHAR(255)	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_is_pure_veg	False	False	TINYINT(1)	False	False	False	False		
+	restaurant_type	False	False	ENUM('Fine Dining','Casual Dining','Family Style','Fast Casual','Fast Food','Buffet','Pub','Tabletop Cooking','Barbecue','Lounge','Bar','Drive-In','Self-Service')	False	False	False	False	utf8mb4	utf8mb4_0900_ai_ci
+	restaurant_entry_created_on	False	False	TIMESTAMP	False	False	False	False		
+	restaurant_entry_update_on	False	False	TIMESTAMP	False	False	False	False		
+	restaurant_entry_created_by	False	False	INT(11)	False	False	False	False		
+	restaurant_entry_updated_by	False	False	INT(11)	False	False	False	False		
+	fssai_approved	False	False	TINYINT(1)	False	False	False	False		
+	home_delivery	False	False	TINYINT(1)	False	False	False	False		
+	take_away	False	False	TINYINT(1)	False	False	False	False		
+	alcohol_in	False	False	TINYINT(1)	False	False	False	False		
+	live_music	False	False	TINYINT(1)	False	False	False	False		
+	valet_parking	False	False	TINYINT(1)	False	False	False	False		
+	karaoke	False	False	TINYINT(1)	False	False	False	False		
+	free_wifi	False	False	TINYINT(1)	False	False	False	False		
+	available_for_functions	False	False	TINYINT(1)	False	False	False	False		
+	live_sports_screening	False	False	TINYINT(1)	False	False	False	False		
+	full_bar_available	False	False	TINYINT(1)	False	False	False	False		

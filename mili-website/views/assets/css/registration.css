@@ -1,0 +1,46 @@
+.flex-card .tabs{
+    padding-bottom: 0px!important;
+}
+.navigation-tabs.outlined-pills.rounded-pills.animated-tabs{
+    padding-bottom: 20px;
+}
+.control-material {
+    /* position: relative; */
+    margin-bottom: 2em!important;
+}
+select#sts {
+    border-top: none;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    padding: 13px;
+    color: #9a9090;
+    font-size: 15px;
+}
+select#state{
+    border-top: none;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    padding: 11px;
+    color: #9a9090;
+    font-size: 15px;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+select {
+    border-top: none;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    padding: 11px;
+    color: #9a9090;
+    font-size: 15px;
+}
+.control-material label{
+    color: #9a9090!important;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YWait</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <!-- Core css -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" id="bulma" href="assets/css/bulma.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/firebase.js"></script>
+    <!-- <script src="js/authentication.min.js"></script> -->
+    <script src="js/authentication.js"></script>
+    <script src="js/bulkit.js"></script>
+    <script src="assets/js/waiwait.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/core_lemonade.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/core_green.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Core css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/core_demo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/home_style.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/chosen/chosen.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/highlightjs/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/iziToast/iziToast.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+    <!-- Plugins css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/core_flashy.css">
+</head>
+
+<body>
+
+    <!-- Pageloader -->
+    <!-- <div class="pageloader"></div>
+    <div class="infraloader is-active"></div> -->
+
+    <!-- Hero and nav -->
+    <div class="hero is-medium">
+        <div class="navbar-wrapper navbar-fade navbar-light">
+            <div class="hero-head">
+
+                <!-- Nav -->
+                <div class="container">
+                    <nav class="nav">
+                        <div class="container big">
+                            <div class="nav-left">
+                                <a class="nav-item" href="/">
+                                    <img class="light-logo desktop-logo" src="assets/images/logos/home-ywait-logo.png" alt="">
+                                    <img class="light-logo mobile-logo" src="assets/images/logos/bulkit-logo-lemonade.png" alt="">
+                                </a>
+                                <!-- Sidebar trigger -->
+                                <!-- <a id="navigation-trigger" class="nav-item hamburger-btn" href="javascript:void(0);">
+                                    <span class="menu-toggle">
+                                        <span class="icon-box-toggle">
+                                            <span class="rotate">
+                                                <i class="icon-line-top"></i>
+                                                <i class="icon-line-center"></i>
+                                                <i class="icon-line-bottom"></i>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </a> -->
+                                <!-- <a href="landing-v3-pricing.html" class="nav-item is-tab nav-inner is-not-mobile">
+                                    Pricing
+                                </a>
+                                <a href="landing-v3-help.html" class="nav-item is-tab nav-inner is-not-mobile">
+                                    Help
+                                </a> -->
+                                <!-- <a  class="button button-signup btn-outlined is-bold btn-align primary-btn rounded raised modal-trigger"
+                                    data-modal="vertical-form-modal"> -->
+                                <!-- <a id="signup-btn" class="nav-item is-tab nav-inner is-not-mobile raised modal-trigger" data-modal="vertical-form-modal">
+                                    Login
+                                </a> -->
+                            </div>
+                            <!-- Responsive toggle -->
+                            <span class="nav-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <div class="nav-right nav-menu">
+                                <span class="nav-item">
+                                    <a href='demo-page'
+                                        class="nav-item is-tab nav-inner is-mobile raised modal-trigger">
+                                        Demo
+                                    </a>
+                                </span>
+                                <span class="nav-item">
+                                    <a id="signup-btn" href='login'
+                                        class="login-btn nav-item is-tab nav-inner is-mobile raised">
+                                        Login
+                                    </a>
+                                </span>
+                                <span class="nav-item">
+                                    <a id="signup-btn" href="signup"
+                                        class="button button-signup btn-outlined is-bold btn-align light-btn rounded">
+                                        Sign up
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- /Nav -->
+            </div>
+        </div>
+    </div>
+    <!-- Hero image -->
+    <img src="assets\images\illustrations\mockups\landing3\restaurant.jpg" class="img-background is-hidden-mobile">
+    <div id="main-hero" class="hero-body is-relative no-padding-bottom">
+        <div class="container has-text-centered">
+            <div class="columns">
+                <div class="column is-8 is-offset-2 has-text-centered">
+                    <h1 class="title big-title text-bold is-2">
+                        Scan Eat Enjoy
+                    </h1>
+                    <!-- <div class="item-1 subtitle light-subtitle">
+                            Start collaborating immediatly on a powerful and easy to use Restaurant Management
+                            system
+                        </div> -->
+                    <div class="item-1 subtitle light-subtitle">Don't let your customers do pssh pssh! hiss hiss! excuse
+                        me.. FWEET!.. Oye Waiter, Bro, Mere Bhai, Anna, @#$% for calling out waiters.</div>
+
+                    <div class="item-2 subtitle light-subtitle">Let the customers scan the QR code and place the order
+                        through their own mobile and enjoy automated order placement.</div>
+
+                    <div class="item-3 subtitle light-subtitle">Introducing YWait! Register to know innovative way to
+                        change restaurant interactions with customers.</div>
+                    <!-- CTA button -->
+                    <div class="has-text-centered get_start">
+                        <a href="signup" class="button button-cta primary-btn rounded raised">Get
+                            started free</a>
+                    </div>
+                    <!-- Popup video link -->
+                    <div class="video-link has-text-centered modal-trigger" data-modal="video-modal">
+                        <i class="fa fa-play"></i> <span>See how it works</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Hero image -->
+    </div>
+    <!-- /Hero and nav -->
+    <!-- Mockup section -->
+    <!-- <div id="product" class="section is-relative mockup-section">
+        <div class="container">
+            <div class="columns has-text-centered">
+                <div class="column"> -->
+    <!-- App -->
+    <!-- <img class="app-mockup" src="assets/images/illustrations/mockups/landing3/food3.png" alt=""> -->
+    <!-- Background image -->
+    <!-- <img class="hr-bg" src="assets/images/illustrations/mockups/landing3/hrbg.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Mockup section -->
+
+    <% include all-in-one.ejs %>
+
+    <% include process.ejs %>
+
+    <% include also-look-this.ejs %>
+
+    <% include footer.ejs %>
+
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script> -->
+
+    <!-- Core js -->
+    <!-- Plugins js -->
+    <!-- Core js -->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <!-- <script src="assets/js/core/modernizr.min.js"></script> -->
+    <!-- Plugins js -->
+    <!-- <script src="assets/js/scrollspy/scrollspy.min.js"></script> -->
+    <!-- <script src="assets/js/waypoints/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="assets/js/waypoints/sticky.min.js"></script> -->
+    <!-- <script src="assets/js/slick-carousel/slick.min.js"></script> -->
+    <!-- <script src="assets/js/chosen/chosen.jquery.min.js"></script> -->
+    <!-- <script src="assets/js/vivus/vivus.min.js"></script> -->
+    <!-- <script src="assets/js/ggpopover/ggtooltip.js"></script> -->
+    <!-- <script src="assets/js/highlightjs/highlight.pack.js"></script> -->
+    <!-- Bulkit js -->
+    <script src="assets/js/main.js"></script>
+    <!-- Bulkit js -->
+    <!-- Page specific js -->
+    <!-- <script src="assets/js/pages/components-modals.js"></script> -->
+    <div id="backtotop"><a href="#"></a></div>
+    <!-- <script src="assets/js/pages/demo.js"></script> -->
+
+
+</body>
+<style>
+    .nav .nav-toggle.is-active span {
+        background-color: #04b261 !important;
+    }
+
+    .hero-body {
+        padding: 11rem 1.5rem;
+    }
+
+    .img-background {
+        position: absolute;
+        width: 100%;
+    }
+
+    .hero-body .title.big-title {
+        color: #ffffff;
+    }
+
+    .video-link i,
+    .video-link span {
+        color: #ffffff;
+    }
+    .nav-item a.is-tab, a.nav-item.is-tab{
+        border-bottom: 0px;
+    }
+    .button.btn-outlined.light-btn:hover {
+        background-color: #04b261;
+        border: 2px solid #04b261;
+        color: #444F60;
+    }
+
+    .navbar-wrapper.navbar-fade .hero-head {
+        background-color: #181818;
+    }
+    .mobile-logo{
+        display: none;
+    }
+
+    @media screen and (max-width: 680px) {
+        .hero-body {
+            padding: 3rem 1.5rem !important;
+        }
+        .navbar-wrapper.navbar-fade .hero-head {
+        background-color: white;
+    }
+    .mobile-logo{
+        display: block;
+    }
+    .desktop-logo{
+        display: none;
+    }
+        .hero-body .title.big-title {
+            color: #444F60;
+        }
+        .subtitle.light-subtitle{
+            color: black;
+            font-size: 16px;
+            display: none;
+        }
+        .video-link i,
+        .video-link span {
+            color: #444F60;
+        }
+    }
+</style>
+<script>
+    // $(window).on('scroll', function () { // this will work when your window scrolled. 
+    //     var height = $(window).scrollTop();  //getting the scrolling height of window
+    //     if (height > 80) {
+    //         $("img.light-logo").attr("src", "assets/images/logos/home-ywait-logo.png");
+    //     } else {
+    //         $("img.light-logo").attr("src", "assets/images/logos/home-ywait-logo.png");
+    //     }
+    // });
+</script>
+
+</html>

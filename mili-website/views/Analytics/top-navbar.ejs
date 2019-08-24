@@ -1,0 +1,365 @@
+<!-- Top Navbar -->
+<nav class="navbar dashboard-nav has-shadow">
+    <div class="container is-fluid">
+        <!-- Nav left -->
+        <div class="navbar-brand">
+            <!-- Logout button -->
+            <a href="logout">
+                <div class="navbar-item nav-icon logout-button">
+                    <i class="sl sl-icon-power"></i>
+                </div>
+            </a>
+            <!-- /Logout button -->
+
+            <!-- Reader mode switch -->
+            <div class="navbar-item reader-switch is-hidden-desktop is-hidden-tablet">
+                <div class="field">
+                    <input id="reader-mode-switch" type="checkbox" name="reader-mode-switch"
+                        class="switch is-outlined is-primary is-small">
+                    <label id="reader-mode-toggle" for="reader-mode-switch"></label>
+                </div>
+            </div>
+            <!-- Reader mode switch -->
+
+            <!-- Dashboard Subnav -->
+            <div id="subnav-basic-layout" class="navbar-subnav is-hidden">
+                <a href="https://bulkitv2.cssninja.io/" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Dashboard">
+                    <i class="sl sl-icon-grid"></i>
+                </a>
+                <a href="dashboard-dark-nav.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Dark Sidebar">
+                    <i class="sl sl-icon-magic-wand"></i>
+                </a>
+                <a href="dashboard-blank.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Blank Page">
+                    <i class="sl sl-icon-doc"></i>
+                </a>
+            </div>
+
+            <!-- Charts Subnav -->
+            <div id="subnav-charts-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-chartjs.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Chart js">
+                    <i class="sl sl-icon-chart"></i>
+                </a>
+                <a href="dashboard-billboardjs.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Billboard js">
+                    <i class="sl sl-icon-graph"></i>
+                </a>
+                <a href="dashboard-peityjs.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Peity js">
+                    <i class="sl sl-icon-pie-chart"></i>
+                </a>
+            </div>
+
+            <!-- Social Subnav -->
+            <div id="subnav-social-layout" class="navbar-subnav is-hidden">
+                <a href="https://bulkitv2.cssninja.io/" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Dashboard">
+                    <i class="sl sl-icon-grid"></i>
+                </a>
+                <a href="dashboard-feed.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Feed">
+                    <i class="sl sl-icon-like"></i>
+                </a>
+                <a href="dashboard-feed-post.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Post">
+                    <i class="sl sl-icon-speech"></i>
+                </a>
+            </div>
+
+            <!-- Widgets Subnav -->
+            <div id="subnav-widgets-layout" class="navbar-subnav is-hidden">
+                <a href="https://bulkitv2.cssninja.io/" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Dashboard">
+                    <i class="sl sl-icon-grid"></i>
+                </a>
+                <a href="dashboard-widgets-data.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Data Widgets">
+                    <i class="sl sl-icon-calculator"></i>
+                </a>
+                <a href="dashboard-widgets-social.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Social Widgets">
+                    <i class="sl sl-icon-cup"></i>
+                </a>
+            </div>
+
+            <!-- Documents Subnav -->
+            <div id="subnav-documents-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-document-list.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Document list">
+                    <i class="sl sl-icon-folder"></i>
+                </a>
+                <a href="dashboard-document-details.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Document details">
+                    <i class="sl sl-icon-doc"></i>
+                </a>
+                <a href="dashboard-document-invoice.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Invoice">
+                    <i class="sl sl-icon-calculator"></i>
+                </a>
+            </div>
+
+            <!-- Projects Subnav -->
+            <div id="subnav-projects-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-project-list.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Projects">
+                    <i class="material-icons">apps</i>
+                </a>
+                <a href="dashboard-project-mytasks.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Tasks">
+                    <i class="sl sl-icon-check"></i>
+                </a>
+                <a href="dashboard-events-board.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Events">
+                    <i class="sl sl-icon-clock"></i>
+                </a>
+            </div>
+
+            <!-- Contacts Subnav -->
+            <div id="subnav-contacts-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-contacts-list.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Contact list">
+                    <i class="sl sl-icon-people"></i>
+                </a>
+                <a href="dashboard-contacts-grid.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Contact grid">
+                    <i class="sl sl-icon-notebook"></i>
+                </a>
+                <a href="dashboard-contacts-single.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Single contact">
+                    <i class="sl sl-icon-user"></i>
+                </a>
+            </div>
+
+            <!-- CRM Subnav -->
+            <div id="subnav-crm-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-crm-boards.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="My Boards">
+                    <i class="material-icons">apps</i>
+                </a>
+                <a href="dashboard-crm-kanban.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Kanban">
+                    <i class="material-icons">view_week</i>
+                </a>
+                <a href="dashboard-crm-deal.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Deal">
+                    <i class="sl sl-icon-trophy"></i>
+                </a>
+            </div>
+
+            <!-- Support desk Subnav -->
+            <div id="subnav-support-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-support-dashboard.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Support Dashboard">
+                    <i class="material-icons">apps</i>
+                </a>
+                <a href="dashboard-support-tickets.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Ticket List">
+                    <i class="sl sl-icon-tag"></i>
+                </a>
+                <a href="dashboard-support-ticket.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Single Ticket">
+                    <i class="sl sl-icon-support"></i>
+                </a>
+            </div>
+
+            <!-- Datatables Subnav -->
+            <div id="subnav-datatable-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-datatable-basic.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Basic datatable">
+                    <i class="material-icons">border_bottom</i>
+                </a>
+                <a href="dashboard-datatable-variations.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Datatable variations">
+                    <i class="material-icons">border_style</i>
+                </a>
+                <a class="navbar-item is-subnav" onclick="resetToken()">
+                    <i class="material-icons">border_outer</i>
+                    <i class="fas fa-redo-alt"></i>
+                    <div class="btn btn-success modal-trigger" id="reset_token"
+                        onclick="resetToken()">
+                        <span class="badge" id="token"></span>
+                        <!-- <div style="margin-right: 15px;">Reset Token</div> -->
+                </div>
+                </a>
+            </div>
+
+            <!-- Forum Subnav -->
+            <div id="subnav-forum-layout" class="navbar-subnav is-hidden">
+                <a href="dashboard-forum-home.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Forum Home">
+                    <i class="material-icons">apps</i>
+                </a>
+                <a href="dashboard-forum-channel.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Forum Channel">
+                    <i class="material-icons">people_outline</i>
+                </a>
+                <a href="dashboard-forum-topic.html" class="navbar-item is-subnav" data-toggle="tooltip"
+                    data-placement="bottom" data-title="Forum Topic">
+                    <i class="material-icons">short_text</i>
+                </a>
+            </div>
+
+            <!-- /Right sidebar trigger -->
+            <a id="mobile-dashboard-trigger" class="navbar-item hamburger-btn is-hidden-desktop"
+                href="javascript:void(0);">
+                <span class="menu-toggle">
+                    <span class="icon-box-toggle">
+                        <span class="rotate">
+                            <i class="icon-line-top"></i>
+                            <i class="icon-line-center"></i>
+                            <i class="icon-line-bottom"></i>
+                        </span>
+                    </span>
+                </span>
+            </a>
+        </div>
+        <!-- /Nav left -->
+
+        <!-- Nav right -->
+        <div class="navbar-menu">
+            <div class="navbar-end">
+
+                <!-- Notifications dropdown (hidden on mobile) -->
+                <div class="navbar-item drop-pop is-centered nav-icon">
+                    <a href="#" class="nav-inner">
+                        <i class="sl sl-icon-bell"><span class="new-circle gelatine"></span></i>
+                    </a>
+                    <div class="drop-wrapper notifications-drop">
+                        <div class="drop-inner has-arrow">
+                            <div class="notifications-header has-text-left">
+                                <h3>Notifications</h3>
+                            </div>
+                            <div class="notifications-body">
+                                <ul class="notifications-list">
+                                    <li>
+                                        <i class="sl sl-icon-heart red"></i>
+                                        <div class="notification-content">
+                                            <img src="https://via.placeholder.com/250x250" alt=""
+                                                data-demo-src="assets/images/avatars/henry.jpg">
+                                            <div class="notification-text">
+                                                <div class="text">
+                                                    <b>Henry</b> liked your <b>comment</b>.
+                                                </div>
+                                                <div class="timestamp">
+                                                    23 minutes ago
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="sl sl-icon-check"></i>
+                                        <div class="notification-content">
+                                            <img src="https://via.placeholder.com/250x250" alt=""
+                                                data-demo-src="assets/images/avatars/carolin.png">
+                                            <div class="notification-text">
+                                                <div class="text">
+                                                    <b>Marjory</b> followed you.
+                                                </div>
+                                                <div class="timestamp">
+                                                    1 hour ago
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="sl sl-icon-heart"></i>
+                                        <div class="notification-content">
+                                            <img src="https://via.placeholder.com/250x250" alt=""
+                                                data-demo-src="assets/images/avatars/marc.jpg">
+                                            <div class="notification-text">
+                                                <div class="text">
+                                                    <b>Marc</b> commented one of your tasks.
+                                                </div>
+                                                <div class="timestamp">
+                                                    Yesterday
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Notifications dropdown -->
+                <!-- Messages dropdown (hidden on mobile) -->
+                <div class="navbar-item drop-pop is-centered nav-icon">
+                    <a href="#" class="nav-inner">
+                        <i class="sl sl-icon-envelope-open"><span class="new-circle gelatine"></span></i>
+                    </a>
+                    <div class="drop-wrapper emails-drop">
+                        <div class="drop-inner has-arrow">
+                            <div class="emails-header">
+                                <h3>Messages</h3>
+                            </div>
+                            <div class="emails-body">
+                                <ul class="emails-list">
+                                    <li>
+                                        <img src="https://via.placeholder.com/250x250" alt=""
+                                            data-demo-src="assets/images/avatars/ray.jpg">
+                                        <div class="email-content">
+
+                                            <div class="email-text">
+                                                <div class="text">
+                                                    Hello, after our last meetings, it seems that some goals were...
+                                                </div>
+                                                <!--div class="timestamp">
+                                                            Nov 09, 14:18
+                                                        </div-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="fake-avatar is-secondary">B</span>
+                                        <div class="email-content">
+                                            <div class="email-text">
+                                                <div class="text is-read">
+                                                    We did not receive the order yet, can you please check if it
+                                                    has...
+                                                </div>
+                                                <!--div class="timestamp">
+                                                            Nov 05, 13:31
+                                                        </div-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="fake-avatar is-primary">J</span>
+                                        <div class="email-content">
+                                            <div class="email-text">
+                                                <div class="text is-read">
+                                                    My boss was very grateful that you found a solution during the
+                                                    week as...
+                                                </div>
+                                                <!--div class="timestamp">
+                                                            Nov 05, 09:47
+                                                        </div-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Messages dropdown -->
+                <!-- Global search (desktop and tablet only) -->
+                <div class="navbar-item nav-icon search-icon modal-trigger" data-modal="search-modal">
+                    <i class="sl sl-icon-magnifier"></i>
+                </div>
+                <!-- /Global search -->
+
+                <!-- Right sidebar trigger (desktop and tablet only) -->
+                <div class="navbar-item nav-icon chat-button quickview-trigger" data-quickview="main-quickview">
+                    <i class="im im-icon-Speach-Bubble11"></i>
+                </div>
+                <!-- /Right sidebar trigger -->
+            </div>
+        </div>
+        <!-- /Nav right -->
+    </div>
+</nav>
+<!-- /Top Navbar -->

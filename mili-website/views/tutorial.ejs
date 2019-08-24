@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>YWait-Kitchen</title>
+   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+   <!-- Core css -->
+   <!-- <script src="assets/js/core/jquery.min.js"></script> -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/custom_dashboard.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="assets/js/waiwait.js"></script>
+   <link rel="stylesheet" type="text/css" href="assets/css/bulma.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+   <!-- Icons -->
+   <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+   <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+   <!-- Plugins css -->
+   <link rel="stylesheet" type="text/css" href="assets/js/jqdropdown/jquery.dropdown.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/iziToast/iziToast.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/datepicker/datepicker.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/wickedpicker/wickedpicker.min.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/chosen/chosen.css">
+   <link rel="stylesheet" type="text/css" href="assets/js/jqvmap/jqvmap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+   <script src="assets/js/kitchen.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+   <div class="agree-modal" id="amit" style="display:none;">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header orange">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                     aria-hidden="true">&times;</span>
+
+               </button>
+               <h4 class="modal-title"><strong></strong>AppleBees</h4>
+               <p>Description Here: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                  nostrud exercitation
+                  ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  eu fugiat nulla
+                  pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est
+                  laborum.</p>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Pageloader -->
+   <!-- <div class="pageloader"></div>
+   <div class="infraloader is-active"></div> -->
+   <!-- Main sidebar menu -->
+   <!-- /Main sidebar menu -->
+         <!-- /Child menu header -->
+         <!-- Sidebar menu 1 -->
+         <% include side-navbar.ejs %>
+         <!-- /Sidebar menu 1 -->
+         <!-- Sidebar menu 2 -->
+         <ul id="documents-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">insert_drive_file</span>Documents</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Document list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Document details <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Invoice <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">assignment</span>Projects</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Project list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Project details <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">assignment_turned_in</span>Tasks</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Task list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Kanban board</a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">library_books</span>Forms</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Step form <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Steps <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+         <!-- /Sidebar menu 2 -->
+         <!-- Sidebar menu 3 -->
+         <ul id="business-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">group</span>Contacts</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Contact list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Contact grid <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Contact details <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">person_add</span>Leads</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Leads list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Add lead <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">attach_money</span>Deals</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Deals list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Single Deal <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+         </ul>
+         <!-- /Sidebar menu 3 -->
+         <!-- Sidebar menu 4 -->
+         <ul id="misc-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">grid_on</span>Datatables</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Example 1 <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Example 2 <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Example 3 <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">speaker_notes</span>Faq</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Faq home <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Faq article <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">thumbs_up_down</span>Forum</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Forum home <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Forum thread <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">email</span>Mailbox</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Inbox <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+                  </li>
+                  <li><a href="javascript:void(0);">Compose <span class="sl sl-icon-lock warning-text ml-10"></span></a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+         <!-- /Sidebar menu 4 -->
+         <!-- Sidebar menu 5 -->
+         <ul id="settings-menu" class="sidebar-menu animated preFadeInRIght fadeInRight">
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">settings</span>Global settings</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Preferences <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Change password <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">account_circle</span>User settings</a>
+               <ul>
+                  <li><a href="javascript:void(0);">User list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Add user <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Access rights <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+            <li class="have-children">
+               <a class="parent-link" href="#"><span class="material-icons">domain</span>Organizations</a>
+               <ul>
+                  <li><a href="javascript:void(0);">Organizations list <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+                  <li><a href="javascript:void(0);">Add organization <span
+                           class="sl sl-icon-lock warning-text ml-10"></span></a></li>
+               </ul>
+            </li>
+         </ul>
+         <!-- /Sidebar menu 5 -->
+      </div>
+   </nav>
+   <!-- /Child push sidebar menu -->
+   <!-- Top Navbar -->
+   <% include dash-navbar.ejs %>
+   <!-- /Top Navbar -->
+   <!-- Main dashboard container -->
+
+         <!-- /Breadcrumbs -->
+         <!-- Dashboard Wrapper -->
+         
+         <!-- /Main content -->
+      </div>
+      <!-- /Main view -->
+   </div>
+   </div>
+
+   <!-- /Dashboard Wrapper -->
+   </div>
+ 
+   </div>
+   <!-- Main dashboard container -->
+   <!-- /Main -->
+   <!-- Footer -->
+   <footer class="footer">
+      <div class="container bot-footer">
+         <div class="has-text-centered">
+            <div class="has-text-centered">
+               <img class="small-footer-logo" src="assets/images/logos/bulkit-logo-g.png" alt="">
+            </div>
+         </div>
+         <div class="has-text-centered">
+            <span class="more-info-company">Scan Eat Enjoy</span>
+         </div>
+      </div>
+   </footer>
+   <!-- /Footer -->
+   <script>
+      //DASHBOARD
+      // var q = jQuery.noConflict();
+      // (function ($) {
+      // $(window).on('load', function () {
+      $(function () {
+         $('#food-select-option').change(function () {
+            if ($(this).val() == "#amit") {
+               $('#amit').fadeIn();
+            }
+            if ($(this).val() == "#consumergoods2") {
+               $('#consumergoods2').modal('show');
+            }
+            if ($(this).val() == "#consumergoods3") {
+               $('#consumergoods3').modal('show');
+            }
+            if ($(this).val() == "#consumergoods4") {
+               $('#consumergoods4').modal('show');
+            }
+
+            console.log();
+         });
+      });
+            // })(jQuery);
+   </script>
+   <!-- Reminder Modal -->
+   <!-- Core js -->
+   <script src="assets/js/core/modernizr.min.js"></script>
+   <!-- Plugins js -->
+   <script src="assets/js/chartjs/Chart.bundle.min.js"></script>
+   <script src="assets/js/peity/peity.min.js"></script>
+   <script src="assets/js/ggpopover/ggtooltip.js"></script>
+   <script src="assets/js/iziToast/iziToast.min.js"></script>
+   <script src="assets/js/datepicker/datepicker.min.js"></script>
+   <script src="assets/js/wickedpicker/wickedpicker.min.js"></script>
+   <script src="assets/js/chosen/chosen.jquery.min.js"></script>
+   <!-- Vmap -->
+   <script src="assets/js/jqvmap/jquery.vmap.js"></script>
+   <script src="assets/js/jqvmap/maps/jquery.vmap.usa.js"></script>
+   <script src="assets/js/jqvmap/data/jquery.vmap.sampledata.js"></script>
+   <!-- Bulkit js -->
+   <script src="assets/js/common.js"></script>
+   <!-- Page specific js -->
+   <script src="assets/js/pages/dashboard.js"></script>
+   <script src="assets/js/pages/components-modals.js"></script>
+   <script src="assets/js/pages/components-quickview.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <script src="assets/js/paginate.js"></script>
+   <link rel="stylesheet" href="assets/css/paginate.css">
+   <link rel="stylesheet" href="assets/css/ligne.css">
+   <script src="js/main.js"></script>
+</body>
+<style>
+   .modal-card,
+   .modal-content {
+      margin: 0 auto;
+      max-height: calc(100vh - 40px);
+      width: 640px;
+      position: absolute;
+      z-index: 10;
+      margin-top: 32%;
+   }
+
+   body {
+
+      background-color: #eee;
+   }
+
+   table th,
+   table td {
+      text-align: center;
+   }
+
+   .pagination li:hover {
+      cursor: pointer;
+   }
+</style>
+
+</html>

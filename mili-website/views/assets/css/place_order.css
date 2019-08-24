@@ -1,0 +1,294 @@
+.form-control{
+    width: 16%!important;
+    margin: 18px 0px 0px 6%;
+ }
+ .navbar-wrapper.navbar-fade .hero-head{
+    background: white;
+ }
+ .dashboard-wrapper .flex-card .card-heading.has-icon{
+   display: block;
+ }
+ input.form-control.placeorder {
+    margin: 0px;
+}
+input.form-control.placeorder {
+   box-shadow: 0px 1px 4px -2px black;
+}
+.confirm-modal {
+    height: 130px;
+    text-align: center;
+ }
+ @media only screen and (max-width: 768px){
+ .flex-card{
+    margin-left: 6%!important;
+    margin-top: -12%;
+ }
+ .col-xs-3 {
+    /* -ms-flex-preferred-size: 25%; */
+    flex-basis: 50%!important;
+    max-width: 50%!important;
+ }
+ .form-control{
+    margin: -8px 0px 0px 5%;
+ }
+ .breadcrumbs {
+    top: 88px!important;
+    right: 8%!important;
+ }
+ .dashboard-wrapper {
+    padding: 0px 6px 0 3px!important;
+    margin-left: -6%!important;
+    margin-top: 8%;
+}
+ }
+ #reset_token{
+    display: none;
+ }
+ .dashboard-wrapper{
+    padding: 0px!important;
+ }
+ input.btn.btn-success{
+    width: 100%!important;
+    padding: 9px;
+ }
+ .box-shadow-filter{
+    box-shadow: 0px 1px 4px -2px black;
+ }
+ .button.button-signup {
+    padding: 10px 30px 30px 30px !important;
+ }
+.control-material{
+    margin-bottom:0px!important;
+}
+.select-quantity{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #afadad;
+    color: #cac8c8;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: white;
+}
+.control-material input.material-input, .control-material textarea{
+    padding: 0.1em 0.625em 0.625em 0.3125em;
+}
+.control-material.is-primary {
+    margin-top: 15px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border: 0!important;
+}
+.btn-save-menu{
+    background: white;
+    border: 1px solid #04b261;
+    border-radius: 19px;
+    padding: 7px 50px 7px 50px;
+    margin-bottom: 5px;
+}
+p {
+    margin: 0px!important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th:hover{
+    background: white!important;
+}
+.update-form-modal {
+   /* padding-right: 3%; */
+   /* padding-top: 0%; */
+   margin-top: 2%;
+   width: 98%;
+   /* border: 1px solid; */
+}
+
+.table {
+   width: 100%;
+   max-width: 100%;
+   margin-bottom: 0px;
+}
+
+.dashboard-wrapper {
+   padding: 0px 22px 0 16px !important;
+}
+
+#toast {
+   visibility: hidden;
+   max-width: 50px;
+   height: 50px;
+   /*margin-left: -125px;*/
+   margin: auto;
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   border-radius: 2px;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   right: 0;
+   bottom: 30px;
+   font-size: 17px;
+   white-space: nowrap;
+}
+
+#toast #img {
+   width: 50px;
+   height: 50px;
+   float: left;
+   padding-top: 16px;
+   padding-bottom: 16px;
+   box-sizing: border-box;
+   background-color: #111;
+   color: #fff;
+}
+
+#toast #desc {
+   color: #fff;
+   padding: 16px;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+#toast.show {
+   visibility: visible;
+   -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+   from {
+      bottom: 0;
+      opacity: 0;
+   }
+
+   to {
+      bottom: 30px;
+      opacity: 1;
+   }
+}
+
+@keyframes fadein {
+   from {
+      bottom: 0;
+      opacity: 0;
+   }
+
+   to {
+      bottom: 30px;
+      opacity: 1;
+   }
+}
+
+@-webkit-keyframes expand {
+   from {
+      min-width: 50px
+   }
+
+   to {
+      min-width: 350px
+   }
+}
+
+@keyframes expand {
+   from {
+      min-width: 50px
+   }
+
+   to {
+      min-width: 350px
+   }
+}
+
+@-webkit-keyframes stay {
+   from {
+      min-width: 350px
+   }
+
+   to {
+      min-width: 350px
+   }
+}
+
+@keyframes stay {
+   from {
+      min-width: 350px
+   }
+
+   to {
+      min-width: 350px
+   }
+}
+
+@-webkit-keyframes shrink {
+   from {
+      min-width: 350px;
+   }
+
+   to {
+      min-width: 50px;
+   }
+}
+
+@keyframes shrink {
+   from {
+      min-width: 350px;
+   }
+
+   to {
+      min-width: 50px;
+   }
+}
+
+@-webkit-keyframes fadeout {
+   from {
+      bottom: 30px;
+      opacity: 1;
+   }
+
+   to {
+      bottom: 60px;
+      opacity: 0;
+   }
+}
+
+@keyframes fadeout {
+   from {
+      bottom: 30px;
+      opacity: 1;
+   }
+
+   to {
+      bottom: 60px;
+      opacity: 0;
+   }
+}
+.food_resturant_update {
+    margin-right: 5px;
+ }
+
+ .confirm-modal {
+    margin-left: 7%;
+    margin-right: 1%;
+ }
+
+ .payment_mode,
+ .payment_status {
+    height: 40px;
+    width: 30%;
+    border: 1px solid #afadad;
+    color: #cac8c8;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: white;
+ }
+ 
+ .search_box {
+    height: 40px;
+    width: 100%;
+    border: 1px solid #afadad;
+    color: #cac8c8;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background: white;
+ }

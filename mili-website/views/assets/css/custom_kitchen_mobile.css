@@ -1,0 +1,53 @@
+@media only screen and (max-width: 480px) {
+    .columns.dashboard-columns {
+      margin-top: 50px;
+    }
+    .breadcrumbs {
+      margin-top: 10px;
+    }
+    .flex-card {
+      margin-left: 4%;
+    }
+    .form-control {
+      margin-top: 0px !important;
+      width: 100% !important;
+    }
+    .restaurant-name {
+      margin: 4% 0% 0% 8% !important;
+      font-size: 11px !important;
+    }
+    .nav-item.drop-pop.is-centered.nav-icon.addnew {
+      width: 0px;
+    }
+    .restaurant-name {
+      margin: 0% 0% 0% 8% !important;
+      font-size: 18px !important;
+    }
+    .nav-toggle {
+      height: 4.5rem;
+    }
+    .nav-left {
+      margin-left: -6% !important;
+    }
+    .btn-success.modal-trigger.addNewFood {
+        margin-left: -80px;
+    }
+    span.nav-toggle {
+        margin-right: 20px;
+    }
+  }
+  @media only screen and (max-width: 968px) {
+    .is-hidden-tab {
+      display: none;
+    }
+    .nav-left {
+      margin-left: 10%;
+    }
+    .nav-item.nav-icon.desktop-logout {
+      margin-right: 3%!important;
+    }
+    .container.dash-container {
+      margin-left: 2%;
+  }
+    
+  }

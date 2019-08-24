@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700');
+@mixin font {
+	font-family: 'Hind', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	background: linear-gradient(pink, lightcyan);
+	@include font;
+}
+
+.app {
+	height: 450px;
+	width: 600px;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.contact {
+	height: 17%;
+	width: 100%;
+	background: rgba(255, 255, 255, .25);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	position: relative;
+	z-index: 9;
+}
+
+.name {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	text-align: right;
+	transform: translateY(-50%);
+	font-weight: 600;
+}
+
+.messages {
+	height: 70%;
+	position: relative;
+	background: white;
+}
+
+.new {
+	padding: 0 1.2rem;
+	height: 66%;
+	width: calc(50% - 2.4rem);
+	position: absolute;
+	top: 49%;
+	left: 1.5rem;
+	transform: translateY(-50%);
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), -1px 1px 2px rgba(0, 0, 0, 0.24);
+	outline: none;
+	@include font;
+	&:focus {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12), -1px 2px 3px rgba(0, 0, 0, 0.24);
+	}
+}
+
+.msg {
+	margin: 1%;
+	padding: 1rem 1.2rem;
+	width: calc(60% - 2.4rem);
+	background: rgba(255, 192, 203, .6);
+	border-radius: 20px;
+	font-size: .9rem;
+	display: flex;
+	&.active {
+		background: rgba(255, 192, 203, 1);
+	}
+	&.alt {
+		background: rgba(211, 211, 211, .6);
+		&.active {
+			background: rgba(211, 211, 211, 1);
+		}
+	}
+}
+
+@keyframes bob {
+	20% {
+		transform: translateY(-.4rem);
+	}
+	70% {
+		transform: translateY(0);
+	}
+}
+
+body {
+	background-color: #eeeeee;
+}
+
+.h7 {
+	font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+	margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+	.gedf-main {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+	.gedf-card {
+		margin-bottom: 2.77rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.gedf-main {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+	.gedf-card {
+		margin-bottom: 2.77rem;
+	}
+}
+
+
+/**Reset Bootstrap*/
+
+.dropdown-toggle::after {
+	content: none;
+	display: none;
+}

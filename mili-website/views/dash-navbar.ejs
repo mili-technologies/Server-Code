@@ -1,0 +1,144 @@
+<!-- Hero and nav -->
+<div class="nav hero is-medium has-shadow">
+   <div class="navbar-wrapper navbar-fade">
+      <div class="hero-head">
+
+         <!-- Nav -->
+         <div class="container dash-container">
+            <nav class="nav">
+               <div class="container big">
+                  <div class="nav-left shrink">
+                     <div class="nav-item mililogo">
+                        <div class="restaurant-name user_company_name"></div>
+                        <!-- MILI -->
+                     </div>
+                     <!-- Sidebar trigger -->
+                  </div>
+                  <div class="nav-item nav-icon search-icon modal-trigger is-hidden-desktop is-hidden-tablet"
+                     data-modal="search-modal">
+                     <i class="sl sl-icon-magnifier"></i>
+                  </div>
+                  <div class="nav-item drop-pop is-centered nav-icon addnew">
+                     <button type="button" class="btn btn-success modal-trigger addNewFood" data-modal="card-modal">
+                        <%= title %>
+                     </button>
+                  </div>
+                  <div class="nav-item drop-pop is-centered nav-icon">
+                     <button type="button" class="btn btn-success modal-trigger" id="reset_token"
+                        onclick="resetToken()">
+                        <span class="badge" id="token"></span>
+                        <div style="margin-right: 15px;">Reset Token</div>
+                     </button>
+                  </div>
+                  <div class="nav-item drop-pop is-centered nav-icon desktop-logout is-hidden-mobile">
+                     <span class="nav-item">
+                        <a id="signup-btn" href="logout"
+                           class="button button-signup btn-outlined is-bold btn-align primary-btn rounded raised">
+                           Logout
+                        </a>
+                     </span>
+                  </div>
+               </div>
+               <!-- Responsive toggle -->
+               <span class="nav-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </span>
+               <div class="nav-right nav-menu is-hidden-desktop is-hidden-tab">
+                  <a href="dashboard" class="nav-item is-tab nav-inner is-menu-mobile">
+                     Dashboard
+                  </a>
+                  <a href="kitchen" class="nav-item is-tab nav-inner is-menu-mobile">
+                     Kitchen
+                  </a>
+                  <a href="menu" class="nav-item is-tab nav-inner is-menu-mobile">
+                     Menu
+                  </a>
+                  <a href="staff" class="nav-item is-tab nav-inner is-menu-mobile">
+                     Staff
+                  </a>
+                  <span class="nav-item">
+                     <a id="signup-btn" href="logout"
+                        class="button button-signup btn-outlined is-bold btn-align primary-btn rounded raised">
+                        Logout
+                     </a>
+                  </span>
+               </div>
+         </div>
+         </nav>
+      </div>
+      <!-- /Nav -->
+
+   </div>
+</div>
+<!-- Hero image -->
+
+<style>
+   .nav-item img {
+      max-height: 1.3rem !important;
+      margin-right: 0px;
+      margin-top: 0px;
+      float: left;
+   }
+
+   .nav-item {
+      font-size: unset;
+   }
+
+   .dash-container {
+      background: white;
+   }
+
+   .container.dash-container {
+      width: 100% !important;
+   }
+
+   .navbar-wrapper.navbar-fade {
+      background: white;
+   }
+
+   #dashboard-wrapper {
+      padding-top: 0px;
+   }
+
+   .nav-item.nav-icon.desktop-logout{
+      margin-right: -9%;
+   }
+   .btn {
+      width: auto !important;
+   }
+
+   @media (max-width: 480px) {
+      .breadcrumbs {
+         top: 56px;
+      }
+      .nav-item.nav-icon.desktop-logout{
+      margin-right: 0%;
+   }
+   }
+
+   .button.button-signup.btn-outlined.is-bold {
+      border-width: 2px;
+      font-weight: 600;
+      font-size: 13px;
+   }
+
+   .button.button-signup {
+      padding: 18px 30px !important;
+   }
+
+   button.btn.btn-success.modal-trigger {
+      display: block;
+   }
+
+   .nav-left {
+      /* margin-left: 10%; */
+   }
+
+   .badge {
+      padding: 3px 0px;
+      font-size: 16px;
+      float: right;
+   }
+</style>

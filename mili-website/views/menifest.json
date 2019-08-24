@@ -1,0 +1,21 @@
+{
+    "short_name": "Mili",
+    "name": "Mili",
+    "icons": [
+        {
+            "src": "miliserver/views/assets/images/logos/brands/app-icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "miliserver/views/assets/images/logos/brands/app-icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/maps/?source=pwa",
+    "background_color": "white",
+    "display": "standalone",
+    "scope": "/maps/",
+    "theme_color": "#00D1B2"
+}

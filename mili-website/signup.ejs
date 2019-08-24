@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ywait - Registration</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/authentication.js"></script>
+  <script src="js/cities.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/home_style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/sign_up.css">
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+  <link rel='stylesheet'
+    href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" id="bulma" href="assets/css/bulma.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/core_green.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/js/ggpopover/ggtooltip.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/icons.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/core.css">
+
+
+</head>
+
+<body>
+    <% include  log-in.ejs %>
+  <div class="hero is-medium">
+    <div class="navbar-wrapper navbar-fade">
+      <div class="hero-head">
+
+      <% include  log-in.ejs %>
+        <!-- Nav -->
+        <div class="container">
+          <nav class="nav">
+            <div class="container big">
+              <div class="nav-left shrink">
+                <a class="nav-item mililogo" href="/">
+                  <img src="assets/images/logos/brands/milithelogo-1.png" alt="">
+                  <!-- MILI -->
+                </a>
+                <!-- Sidebar trigger -->
+              </div>
+              <a href="#process" class="nav-item is-tab nav-inner is-not-mobile">
+                How it work?
+              </a>
+              <a href="demo-page" class="nav-item is-tab nav-inner is-not-mobile">
+                Demo
+              </a>
+            </div>
+            <!-- Responsive toggle -->
+            <span class="nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <div class="nav-right nav-menu">
+              <a href="#process" class="nav-item is-tab nav-inner is-menu-mobile">
+                How it work?
+              </a>
+              <a href="demo-page" class="nav-item is-tab nav-inner is-menu-mobile">
+                Demo
+              </a>
+              <span class="nav-item">
+                <a id="signup-btn"
+                  class="button button-signup btn-outlined is-bold btn-align primary-btn rounded raised modal-trigger"
+                  data-modal="vertical-form-modal">
+                  Log in
+                </a>
+              </span>
+            </div>
+        </div>
+        </nav>
+      </div>
+      <!-- /Nav -->
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="snackbar_signin"></div>
+    <form class="well form-horizontal main-login" onsubmit="return signUpWithEmailVerification();" id="contact_form">
+      <fieldset>
+        <div class="flex-card clean-signup-info padding-20">
+
+          <h2 class="has-text-centered clean-text">Get started</h2>
+          <div class="feature">
+            <img src="assets/images/illustrations/icons/landing-v1/business-ready.svg" alt="">
+            <div class="feature-text">Don't let your customers do pssh pssh! hiss hiss! excuse
+              me..
+              FWEET!.. Oye Waiter, Bro, Mere Bhai, Anna, @#$% for calling out waiters.</div>
+          </div>
+          <div class="feature">
+            <img src="assets/images/illustrations/icons/landing-v1/credit-card.svg" alt="">
+            <div class="feature-text">Let the customers scan the QR code on the table and place
+              the order through there own mobile without
+              any hardware cost and waiter training sorry it's actually waiter less ordering</div>
+          </div>
+          <div class="feature">
+            <img src="assets/images/illustrations/icons/landing-v1/components.svg" alt="">
+            <div class="feature-text">Introducing Mili! Register To Know How We Can Change The Restaurant Interact With
+              Customers and take
+              it to next level you alays thought of along with all new innovative feature of scanning and placing the
+              order
+              at a price you will love to use it.</div>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="register_form">
+          <legend>
+            <center>
+              <h2><b>Registration Form</b></h2>
+            </center>
+          </legend><br>
+          <div class="form-group fname_css">
+            <label class="col-md-6 control-label">First Name*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                <input name="first_name" id="first_name" placeholder="" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group lname_css">
+            <label class="col-md-6 control-label">Last Name*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                <input name="last_name" id="last_name" placeholder="" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group fname_css">
+            <label class="col-md-6 control-label">State*</label>
+            <div class="col-md-6 selectContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> -->
+                <select onchange="print_city('state', this.selectedIndex);" id="sts" name="restaurant_state"
+                  class="form-control selectpicker">
+                  <option value=""></option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group lname_css">
+            <label class="col-md-6 control-label">City*</label>
+            <div class="col-md-6 selectContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> -->
+                <select name="restaurant_city" id="state" class="form-control selectpicker">
+                  <option value=""></option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <script language="javascript">print_state("sts");</script>
+          <div class="form-group">
+            <label class="col-md-6 control-label">Restaurant Name*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                <input name="restaurant_name" placeholder="" class="form-control" id="restaurantname" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6 control-label">E-Mail*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> -->
+                <input name="user_email" id="email" placeholder="" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6 control-label">Password*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                <input name="user_password" placeholder="" class="form-control" type="password">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6 control-label">Confirm Password*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                <input name="password" id="password" placeholder="" class="form-control" type="password">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-6 control-label">Contact No.*</label>
+            <div class="col-md-6 inputGroupContainer">
+              <div class="input-group">
+                <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> -->
+                <input name="user_contact" id="phonenumber" placeholder="(+91)" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+          <!-- Button -->
+          <div class="form-group" style="text-align:center;">
+            <label class="col-md-6 control-label"></label>
+            <div class="col-md-6"><br>
+              <input type="submit" class="btn btn-warning" name="save" value="Get started now" id="registerButton">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  </div><!-- /.container -->
+  <% include footer.ejs %>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+
+  <style>
+    /* .fname_css {
+      width: 50%;
+    }
+
+    .lname_css {
+      width: 50%;
+      float: right;
+    } */
+    .well {
+      /* padding: 0px 130px 130px 130px; */
+      background: white;
+      /* border: 0px; */
+    }
+
+    .form-group {
+      /* margin-bottom:0px; */
+    }
+
+    legend {
+      border-bottom: 0px;
+    }
+
+    .btn-warning {
+      background-image: linear-gradient(to bottom, #07b363 0, #07b363 100%);
+    }
+
+    .btn-warning {
+      border-color: #07b363;
+      background-color: #07b363;
+    }
+
+    .btn-warning:hover,
+    .btn-warning:focus {
+      background-color: #07b363;
+      background-position: 0 -15px;
+    }
+
+    .btn-warning:hover,
+    .btn-warning:focus,
+    .btn-warning:active,
+    .btn-warning.active,
+    .open>.dropdown-toggle.btn-warning {
+      color: #fff;
+      background-color: #07b363;
+      border-color: #07b363;
+    }
+  </style>
+
+
+</body>
+
+</html>

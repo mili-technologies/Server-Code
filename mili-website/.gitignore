@@ -1,0 +1,13 @@
+.DS_Store
+temp/
+coverage
+node_modules
+*.log
+*.exe
+*.bin
+!winsw.exe
+.idea
+.nexe
+lib
+CRM.zip
+photoshop

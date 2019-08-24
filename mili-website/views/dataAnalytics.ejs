@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        window.onload = function () {
+            $.ajax({
+                url: "/getFoodAnalytics",
+                type: "GET",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result, state, xhr) {
+                    var title = 'Top Selling Food Item';
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                        animationEnabled: true,
+
+                        title: {
+                            text: title
+                        },
+                        axisX: {
+                            interval: 1
+                        },
+                        axisY2: {
+                            interlacedColor: "rgba(1,77,101,.2)",
+                            gridColor: "rgba(1,77,101,.1)",
+                            title: "Number of Sell"
+                        },
+                        data: [{
+                            dataPoints: result,
+                            type: "bar",
+                            name: "companies",
+                            axisYType: "secondary",
+                            color: "#014D65",
+                        }]
+                    });
+                    chart.render();
+                },
+                error: function (error) {
+
+                }
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="chartContainer" style="height: 50%; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+.btn {
+    border: 2px solid gray;
+    color: white;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 90%;
+    font-weight: normal;
+}
+
+.btn-warning {
+    border-color: #07b363;
+    background-color: #07b363;
+}
+.next-btn {
+    border: 1px solid #07b363;
+    padding: 8px 15px 8px 15px;
+    border-radius: 20px;
+}
+.button-signup,.login-btn{
+    display: none;
+}
+
+#toast {
+  visibility: hidden;    
+  height: 30px;
+  margin: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#toast #desc {
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#toast.show {
+  visibility: visible;
+}
+
