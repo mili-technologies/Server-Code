@@ -9,7 +9,7 @@
   "author": "Karan",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.413.0",
+    "aws-sdk": "^2.814.0",
     "bcrypt": "^3.0.6",
     "dateformat": "^3.0.3",
     "ejs": "^2.6.1",
