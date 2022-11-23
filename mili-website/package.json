@@ -33,7 +33,7 @@
     "request-context": "^2.0.0",
     "require": "^2.4.20",
     "sendmail": "^1.4.1",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.5.0",
     "socket.io-client": "^2.2.0",
     "unique-random": "^2.1.0",
     "user-groups-roles": "^2.0.4"
